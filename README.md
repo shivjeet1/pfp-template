@@ -37,10 +37,10 @@ To launch a working site in under 60 seconds:
 git clone https://github.com/shivjeet1/pfp-template.git
 
 # Enter the example site directory
-cd hugo-portfolio-template/exampleSite
+cd pfp-template/exampleSite
 
 # Start Hugo local development server
-hugo server --themesDir ../.. -t hugo-portfolio-template
+hugo server --themesDir ../.. -t pfp-template
 ```
 
 Open `http://localhost:1313` in your browser.
@@ -52,20 +52,20 @@ Open `http://localhost:1313` in your browser.
 1. In your existing Hugo project root:
 
 ```bash
-git submodule add https://github.com/shivjeet1/pfp-template.git themes/hugo-portfolio-template
+git submodule add https://github.com/shivjeet1/pfp-template.git themes/pfp-template
 ```
 
 2. Add the theme to your `hugo.toml` (or `config.toml`):
 
 ```toml
-theme = "hugo-portfolio-template"
+theme = "pfp-template"
 ```
 
 3. Copy the starter content and data templates from the theme's `exampleSite`:
 
 ```bash
-cp -r themes/hugo-portfolio-template/exampleSite/content ./
-cp -r themes/hugo-portfolio-template/exampleSite/data ./
+cp -r themes/pfp-template/exampleSite/content ./
+cp -r themes/pfp-template/exampleSite/data ./
 ```
 
 ---
@@ -102,7 +102,7 @@ Here is a sample `hugo.toml` configuration:
 baseURL = "https://example.org/"
 title = "Alex Developer | Software Engineer & Creator"
 defaultContentLanguage = "en"
-theme = "hugo-portfolio-template"
+theme = "pfp-template"
 
 # Hugo v0.146.0+ Taxonomies
 [taxonomies]
@@ -117,7 +117,7 @@ theme = "hugo-portfolio-template"
   fontSize = "1.1rem"
   metaKeywords = ["software engineer", "developer", "golang", "rust", "typescript", "open-source"]
   dateFormat = "Jan 2, 2006"
-  footerText = "Crafted with Hugo and hugo-portfolio-template."
+  footerText = "Crafted with Hugo and pfp-template."
 
   # Feature Toggles
   [params.features]
@@ -258,7 +258,7 @@ This theme complies with all requirements for inclusion in the [Hugo Themes Show
 
 ```bash
 cd exampleSite
-hugo --themesDir ../.. -t hugo-portfolio-template
+hugo --themesDir ../.. -t pfp-template
 ```
 
 Output:

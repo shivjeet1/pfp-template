@@ -5,7 +5,7 @@ enableEmoji = true
 enableRobotsTXT = true
 locale = "en"
 
-theme = "hugo-portfolio-template"
+theme = "pfp-template"
 themesDir = "../.."
 
 [params]
