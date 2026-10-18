@@ -56,4 +56,9 @@
         {{ .Site.Params.Author }}
         {{- end }}
     </span>
+    {{- if not .Site.Params.DisableThemeCredit }}
+    <span>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a> &amp; <a target="_blank" rel="noopener noreferrer" href="https://github.com/shivjeet1/hugo-portfolio-template">shivjeet1</a>
+    </span>
+    {{- end }}
 </footer>
