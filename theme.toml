@@ -4,7 +4,7 @@ license = "MIT"
 licenselink = "https://github.com/shivjeet1/pfp-template/blob/main/LICENSE"
 description = "A clean, modern, and high-performance developer portfolio and blog Hugo theme featuring an interactive 3D WebGL hero, dark mode, and structured project showcase."
 homepage = "https://github.com/shivjeet1/pfp-template"
-demosite = "https://shivjeet1.github.io/hugo-portfolio-template/"
+demosite = "https://shivjeet1.github.io/pfp-template/"
 tags = [
   "portfolio",
   "blog",
