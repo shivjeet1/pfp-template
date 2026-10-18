@@ -1,0 +1,23 @@
+<div class="section__head">
+    <h2 class="section__title">{{ .Site.Params.ProjectsSectionTitle | default "Selected Work" }}</h2>
+    <a class="section__link" href="/projects/">{{ .Site.Params.ProjectsSectionLinkText | default "All projects" }}</a>
+</div>
+
+<div class="rows">
+    {{ $data := index hugo.Data "projects" }}
+    {{ with $data }}
+    {{ range first 4 . }}
+    <div class="row">
+        <span class="row__date">{{ with .date }}{{ . }}{{ end }}</span>
+        <span class="row__main">
+            <a class="row__title" href="{{ .link | default "#" }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+            <span class="row__summary">{{ .summary }}</span>
+            <span class="row__tags">
+                {{ with .lang }}{{ range (split . ",") }}<span class="chip">{{ strings.Trim . " " }}</span>{{ end }}{{ end }}
+                {{ with .live }}<a class="chip chip--live" href="{{ . }}" target="_blank" rel="noopener noreferrer">Live site</a>{{ end }}
+            </span>
+        </span>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>

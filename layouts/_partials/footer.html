@@ -1,0 +1,59 @@
+<footer class="footer">
+<!-- SOCIAL ICONS -->
+{{ if isset .Site.Params "socialicons" }}
+<div class="social-icons">
+    <ul class="social-icons-list">
+        {{ range .Site.Params.SocialIcons }}
+        <li class="social-icon">
+            <a href="{{ .url }}" target="_blank" rel="{{ if .rel }}{{ .rel }} {{ end }}noopener noreferrer" aria-label="Learn more on {{ .name }}">
+                <img class="svg-inject" src="{{ relURL "svg/icons/" }}{{ .name | lower }}.svg" alt="">
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
+
+    <!-- Option for user to inject custom html -->
+    {{ if .Site.Params.CustomFooterHTML }}
+    {{ .Site.Params.CustomFooterHTML | safeHTML }}
+    {{ end }}
+
+    {{ .Scratch.Set "footerText" "" }}
+
+    {{ if (.Site.Params.Footer) }}
+        {{ if and (eq .Kind "page") (.Date) }}
+            {{ .Scratch.Add "footerText" (.Date | time.Format "2006") }}
+        {{ else }}
+            {{ .Scratch.Add "footerText" (time.Now | time.Format "2006") }}
+        {{ end }}
+
+        {{ if and (eq .Kind "page") (.Lastmod) (gt (time.Format "2006" .Lastmod) (time.Format "2006" .Date)) }}
+            {{ .Scratch.Add "footerText" "-" }}
+            {{ .Scratch.Add "footerText" (.Lastmod | time.Format "2006") }}
+        {{ end }}
+
+        {{ .Scratch.Add "footerText" " " }}
+        {{ .Scratch.Add "footerText" .Site.Params.Footer }}
+
+        {{ if and (eq .Kind "page") (.Site.Copyright) }}
+            {{ .Scratch.Add "footerText" " " }}
+            {{ .Scratch.Add "footerText" .Site.Copyright }}
+        {{ end }}
+    {{ end }}
+
+    {{ if (gt (.Scratch.Get "footerText" | len) 0) }}
+        <span>&copy; {{ .Scratch.Get "footerText" | markdownify }}</span>
+    {{ end }}
+
+    <span>
+        Made by 
+        {{- $githubUrl := "" -}}
+        {{- range .Site.Params.SocialIcons }}{{ if eq .name "github" }}{{ $githubUrl = .url }}{{ end }}{{ end -}}
+        {{- if $githubUrl }}
+        <a target="_blank" href="{{ $githubUrl }}">{{ .Site.Params.Author }}</a>
+        {{- else }}
+        {{ .Site.Params.Author }}
+        {{- end }}
+    </span>
+</footer>

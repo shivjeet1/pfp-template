@@ -1,0 +1,9 @@
+{{ define "main" }}
+    {{ if eq .Type "post" }}
+        {{- partial "post.html" . -}}
+        {{- partial "toc.html" . -}}
+    {{ else }}
+        {{- partial "page.html" . -}}
+        {{- partial "toc.html" . -}}
+    {{ end }}
+{{ end }}

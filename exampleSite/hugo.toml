@@ -1,0 +1,81 @@
+baseURL = "https://example.com/"
+title = "Alex Chen"
+defaultContentLanguage = "en"
+enableEmoji = true
+enableRobotsTXT = true
+locale = "en"
+
+theme = "hugo-portfolio-template"
+themesDir = "../.."
+
+[params]
+  avatarAltText = "Alex Chen - Systems & Software Engineer"
+  avatarURL = "/images/avatar.png"
+  favicon = "/images/avatar-round-192.png"
+  appleTouchIcon = "/images/avatar-180.png"
+  heroScript = "/js/hero-scene.js"
+  heroMeta = "Computer Science & Systems Engineering • Open Source Contributor"
+
+  showBackToTopButton = true
+
+  # Custom CSS & Accent Color
+  cssFiles = ["css/navbar.css", "css/skills.css"]
+  accentColor = "#4B61D1"
+
+  description = "Systems Architecture, Cloud Infrastructure & Distributed Computing."
+  author = "Alex Chen"
+  metaKeywords = [
+    "Software Engineer",
+    "Systems Architecture",
+    "DevOps",
+    "Cloud Native",
+    "Go",
+    "Rust",
+    "Distributed Systems"
+  ]
+
+  footer = "All rights reserved. Built with Hugo Portfolio Template."
+
+# Social icons in header, hero, and footer
+socialIcons = [ 
+  {name = "github", url = "https://github.com/username"},
+  {name = "linkedin", url = "https://linkedin.com/in/username"},
+  {name = "twitter", url = "https://x.com/username"},
+  {name = "gmail", url = "mailto:alex@example.com"},
+  {name = "rss", url = "/blogs/index.xml"}
+]
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/#home"
+    weight = 1
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/#projects"
+    weight = 2
+
+  [[menu.main]]
+    name = "Blogs"
+    url = "/#blogs"
+    weight = 3
+
+  [[menu.main]]
+    name = "About"
+    url = "/#about"
+    weight = 4
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/#contact"
+    weight = 5
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = false
+
+[minify]
+  minifyOutput = true

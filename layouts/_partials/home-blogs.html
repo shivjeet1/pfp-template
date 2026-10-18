@@ -1,0 +1,17 @@
+<div class="section__head">
+    <h2 class="section__title">{{ .Site.Params.BlogsSectionTitle | default "Writing" }}</h2>
+    <a class="section__link" href="/blogs/">{{ .Site.Params.BlogsSectionLinkText | default "All posts" }}</a>
+</div>
+
+<div class="rows">
+    {{ $posts := where .Site.RegularPages "Section" "blogs" }}
+    {{ range first 4 $posts.ByDate.Reverse }}
+    <a class="row" href="{{ .RelPermalink }}">
+        <span class="row__date">{{ .Date.Format "2006-01-02" }}</span>
+        <span class="row__main">
+            <span class="row__title">{{ .Title }}</span>
+            <span class="row__summary">{{ .Params.summary | default .Summary | truncate 150 }}</span>
+        </span>
+    </a>
+    {{ end }}
+</div>

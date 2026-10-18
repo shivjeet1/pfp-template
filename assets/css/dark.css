@@ -1,0 +1,73 @@
+:root {
+  --light-primary-color: 22, 21, 17;
+  --light-secondary-color: #302e28;
+  --light-tertiary-color: #24231e;
+  --light-text-color: #e8e5db;
+
+  --muted-color: #a9a49a;
+  --accent-color: #8b9be8;
+}
+
+html {
+  background-color: rgb(var(--light-primary-color));
+  color: var(--light-text-color);
+  fill: var(--light-text-color);
+}
+
+.header {
+  background-color: rgba(var(--light-primary-color), 0.92);
+}
+
+.nav-hamburger-list {
+  background: rgb(var(--light-primary-color));
+}
+
+.nav-links .nav-icons-divider {
+  color: var(--light-secondary-color);
+}
+
+a:hover .feather-moon {
+  fill: currentColor;
+  color: currentColor;
+}
+
+.social-icons-list .social-icon,
+.social-icons-list .social-icon a:visited {
+  fill: var(--light-text-color);
+}
+
+.social-icons-list .social-icon a:hover {
+  fill: var(--accent-color);
+}
+
+blockquote {
+  color: var(--muted-color);
+  border-left-color: var(--light-secondary-color);
+}
+
+hr {
+  color: var(--light-secondary-color);
+}
+
+table thead {
+  background-color: var(--light-secondary-color);
+}
+
+table td,
+table th {
+  border-bottom-color: var(--light-secondary-color);
+}
+
+code,
+pre {
+  background-color: var(--light-tertiary-color) !important;
+}
+
+:not(pre) > code {
+  background-color: var(--light-tertiary-color) !important;
+  color: var(--light-text-color);
+}
+
+.header-shadow {
+  border-bottom-color: var(--light-text-color);
+}

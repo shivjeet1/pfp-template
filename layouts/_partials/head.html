@@ -1,0 +1,130 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: {{ .Site.Params.AccentColor | default "#4B61D1" }};
+            --font-size: {{ .Site.Params.FontSize | default "1.1rem" }};
+        }
+    </style>
+
+    {{ $title := .Title | markdownify | default .Site.Title }}
+    {{ $description := ((.Description | default (.Summary | default .Content) | default .Site.Params.Description) | plainify | truncate 160) }}
+    {{ $image := .Params.image | default (.Scratch.Get "avatarImgSrc") }}
+    {{ $siteKeywords := .Site.Params.MetaKeywords | default (slice) }}
+    {{ $postKeywords := .Params.tags | default (slice) }}
+    {{ $keywords := union $siteKeywords $postKeywords }}
+
+    <!-- SEO titles & descriptions -->
+    <title>{{ $title }}</title>
+    <meta name="description" content="{{ $description }}">
+    <meta name="keywords" content='{{ delimit $keywords ", "}}'>
+
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:image" content="{{ absURL $image }}">
+    <meta property="og:image:secure_url" content="{{ absURL $image }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta property="twitter:domain" content="{{ .Permalink }}">
+    <meta property="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:image" content="{{ absURL $image }}">
+
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ with .OutputFormats.Get "rss" }}
+    <link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
+    {{ end }}
+
+    {{ $favicon := .Site.Params.Favicon | default "images/avatar-round-192.png" }}
+    {{ $appleTouchIcon := .Site.Params.AppleTouchIcon | default "images/avatar-180.png" }}
+    <link rel="icon" type="image/png" href="{{ $favicon | relURL }}">
+    <link rel="apple-touch-icon" href="{{ $appleTouchIcon | relURL }}">
+
+    {{ $cssNormalize := resources.Get "css/normalize.min.css" }}
+    {{ with $cssNormalize }}
+    <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" media="print">
+    {{ end }}
+
+    {{ $cssMain := resources.Get "css/main.css" | minify }}
+    <link rel="stylesheet" type="text/css" href="{{ $cssMain.RelPermalink }}">
+
+    {{ $cssDark := resources.Get "css/dark.css" | minify }}
+    <link id="dark-theme" rel="stylesheet" href="{{ $cssDark.RelPermalink }}">
+
+    <script>
+        /* Set the saved theme before first paint to avoid a flash. */
+        (function () {
+            try {
+                var saved = localStorage.getItem("theme-preference");
+                if (!saved) {
+                    saved = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                if (saved === "light") {
+                    var sheet = document.getElementById("dark-theme");
+                    if (sheet) sheet.disabled = true;
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    {{ if .Site.Params.cssFiles }}
+    {{ range .Site.Params.cssFiles }}
+    {{ $css := resources.Get . | minify }}
+    {{ with $css }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+    {{ $jsBundle := resources.Match "js/**.js" | resources.Concat "js/bundle.js" | minify | resources.Fingerprint "sha256" }}
+    <script defer src="{{ $jsBundle.RelPermalink }}" integrity="{{ $jsBundle.Data.Integrity }}"></script>
+
+    {{ if .IsHome }}
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    {{ $heroScript := .Site.Params.HeroScript | default "/js/hero-scene.js" }}
+    <script type="module" src="{{ $heroScript | relURL }}"></script>
+    {{ end }}
+
+    <!-- Structured data -->
+    {{ if .IsHome }}
+    {{ $sameAs := slice }}
+    {{ range .Site.Params.SocialIcons }}{{ if and (ne .name "gmail") (ne .name "email") }}{{ $sameAs = $sameAs | append .url }}{{ end }}{{ end }}
+    {{ $ld := dict
+        "@context" "https://schema.org"
+        "@type" "Person"
+        "name" .Site.Params.Author
+        "url" .Site.BaseURL
+        "description" .Site.Params.Description
+        "sameAs" $sameAs }}
+    <script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+    {{ else if eq .Type "post" }}
+    {{ $ld := dict
+        "@context" "https://schema.org"
+        "@type" "BlogPosting"
+        "headline" (.Title | plainify)
+        "description" $description
+        "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+        "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+        "mainEntityOfPage" .Permalink
+        "author" (dict "@type" "Person" "name" .Site.Params.Author)
+        "image" (absURL $image) }}
+    <script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+    {{ end }}
+
+    <!-- Option for user to inject custom html -->
+    {{ if .Site.Params.CustomHeadHTML }}
+    {{ .Site.Params.CustomHeadHTML | safeHTML }}
+    {{ end }}
+</head>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Locale }}">
+<head>
+    <title>{{ .Permalink }}</title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="icon" type="image/png" href="{{ .Site.Params.Favicon | default "images/avatar-round-192.png" | relURL }}">
+    <link rel="apple-touch-icon" href="{{ .Site.Params.AppleTouchIcon | default "images/avatar-180.png" | relURL }}">
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="0; url={{ .Permalink }}">
+</head>
+</html>

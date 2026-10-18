@@ -1,0 +1,20 @@
+<button id="btt-button" class="btt" onclick="scrollToTop()" aria-label="Back to top">
+  Top
+</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var button = document.getElementById("btt-button");
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 400) {
+            button.classList.add("show-btn");
+        } else {
+            button.classList.remove("show-btn");
+        }
+    }, { passive: true });
+
+    window.scrollToTop = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+});
+</script>

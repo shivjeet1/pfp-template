@@ -1,0 +1,75 @@
+{{ define "main" }}
+
+{{ $email := "" }}
+{{ range .Site.Params.SocialIcons }}{{ if or (eq .name "gmail") (eq .name "email") }}{{ $email = .url }}{{ end }}{{ end }}
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div class="hero__text">
+        <p class="hero__role">{{ .Site.Params.Description }}</p>
+        <h1>{{ .Site.Title }}</h1>
+        <div class="hero__lead">{{ .Content }}</div>
+        <div class="hero__cta">
+            <a class="btn btn--primary" href="/projects/">{{ .Site.Params.CtaProjectsText | default "Projects" }}</a>
+            <a class="btn" href="/blogs/">{{ .Site.Params.CtaBlogsText | default "Blog" }}</a>
+            {{ if isset .Site.Params "resumeurl" }}
+            <a class="btn" href="{{ .Site.Params.resumeURL }}">{{ .Site.Params.ResumeText | default "Resume (PDF)" }}</a>
+            {{ end }}
+            {{ with $email }}<a class="btn" href="{{ . }}">Email</a>{{ end }}
+        </div>
+        {{ with .Site.Params.HeroMeta }}
+        <p class="hero__meta">{{ . }}</p>
+        {{ end }}
+    </div>
+    <div class="hero__canvas-wrap" aria-hidden="true">
+        <canvas id="hero-scene" class="hero__canvas"></canvas>
+    </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section id="projects" class="section">
+    {{ partial "home-projects.html" . }}
+</section>
+
+<!-- WRITING -->
+<section id="blogs" class="section">
+    {{ partial "home-blogs.html" . }}
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <div class="section__head">
+        <h2 class="section__title">{{ .Site.Params.AboutSectionTitle | default "About" }}</h2>
+    </div>
+    {{ with .Site.GetPage "/about" }}
+        {{ .Content }}
+    {{ end }}
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <div class="section__head">
+        <h2 class="section__title">{{ .Site.Params.ContactSectionTitle | default "Contact" }}</h2>
+    </div>
+    <ul class="contact-list">
+        {{ with $email }}
+        <li>Email: <a href="{{ . }}">{{ replace . "mailto:" "" }}</a>
+            <button class="copy-email" data-email="{{ replace . "mailto:" "" }}" aria-label="Copy email address">copy</button>
+        </li>
+        {{ end }}
+        {{ range .Site.Params.SocialIcons }}
+        {{ if and (ne .name "gmail") (ne .name "email") }}
+        <li>{{ .name | title }}: <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .url }}</a></li>
+        {{ end }}
+        {{ end }}
+        {{ if isset .Site.Params "resumeurl" }}
+        <li>Resume: <a href="{{ .Site.Params.resumeURL }}">{{ .Site.Params.resumeURL }}</a></li>
+        {{ end }}
+    </ul>
+</section>
+
+{{ if .Site.Params.showBackToTopButton }}
+    {{ partial "back-to-top.html" . }}
+{{ end }}
+
+{{ end }}

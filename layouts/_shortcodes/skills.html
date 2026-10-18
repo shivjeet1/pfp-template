@@ -1,0 +1,23 @@
+<div class="skills-container">
+  {{ with hugo.Data.skills }}
+  {{ range . }}
+  <div class="skill-category">
+    <h3 class="skill-category__title">{{ .category }}</h3>
+    <div class="skill-grid">
+      {{ range .items }}
+      <div class="skill-card">
+        <div class="skill-card__header">
+          {{ with .glyph }}
+          <span class="skill-glyph">{{ . }}</span>
+          {{ else with .icon }}
+          <i class="{{ . }} skill-icon" data-feather="{{ . }}"></i>
+          {{ end }}
+          <h4 class="skill-card__title">{{ .name }}</h4>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+</div>

@@ -1,0 +1,11 @@
+<div class="devrow">
+  <span class="devrow__date">{{ .Get "date" }}</span>
+  <span class="devrow__body">
+    <a class="devrow__title" href="{{ .Get "link" | default "#" }}" target="_blank" rel="noopener noreferrer">{{ .Get "title" }}</a>
+    <span class="devrow__summary">{{ .Get "summary" }}</span>
+    <span class="devrow__tags">
+      {{ with .Get "lang" }}<span class="devrow__lang">{{ . }}</span>{{ end }}
+      {{ with .Get "live" }}<a class="devrow__lang devrow__live" href="{{ . }}" target="_blank" rel="noopener noreferrer">Live site</a>{{ end }}
+    </span>
+  </span>
+</div>

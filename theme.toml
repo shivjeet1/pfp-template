@@ -1,0 +1,33 @@
+# theme.toml for themes.gohugo.io showcase
+name = "Hugo Portfolio Template"
+license = "MIT"
+licenselink = "https://github.com/shivjeet1/hugo-portfolio-template/blob/main/LICENSE"
+description = "A clean, modern, and high-performance developer portfolio and blog Hugo theme featuring an interactive 3D WebGL hero, dark mode, and structured project showcase."
+homepage = "https://github.com/shivjeet1/hugo-portfolio-template"
+demosite = "https://shivjeet1.github.io/hugo-portfolio-template/"
+tags = [
+  "portfolio",
+  "blog",
+  "clean",
+  "minimal",
+  "responsive",
+  "dark-mode",
+  "threejs",
+  "fast"
+]
+features = [
+  "3D WebGL hero",
+  "Dark mode toggle with local storage persistence",
+  "Table of contents with scrollspy",
+  "Structured project showcase",
+  "Multi-category technical skills grid",
+  "Responsive typography and mobile navigation",
+  "Zero npm/Node build dependencies",
+  "SEO optimized with JSON-LD and OpenGraph",
+  "Service worker offline caching"
+]
+min_version = "0.146.0"
+
+[author]
+  name = "Shivam Lawale"
+  homepage = "https://shivjeet1.tech"

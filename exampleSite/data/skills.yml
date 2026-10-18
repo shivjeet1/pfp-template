@@ -1,0 +1,49 @@
+- category: "Systems & Infrastructure"
+  items:
+    - name: Linux Internals
+      glyph: "🐧"
+    - name: Distributed Systems
+      glyph: "🌐"
+    - name: Cloud Native & Kubernetes
+      glyph: "☸️"
+    - name: Docker & Containers
+      glyph: "📦"
+    - name: System Performance Tuning
+      glyph: "⚡"
+
+- category: "Programming Languages"
+  items:
+    - name: Go
+      glyph: "🔷"
+    - name: Rust
+      glyph: "🦀"
+    - name: C / C++
+      glyph: "⚙️"
+    - name: TypeScript / JavaScript
+      glyph: "📜"
+    - name: Python
+      glyph: "🐍"
+
+- category: "Architecture & DevOps"
+  items:
+    - name: CI/CD Pipelines
+      glyph: "🔄"
+    - name: Microservices Architecture
+      glyph: "🏗️"
+    - name: API Design (REST & gRPC)
+      glyph: "🔌"
+    - name: Observability & OpenTelemetry
+      glyph: "📊"
+    - name: Git & GitOps
+      glyph: "🌿"
+
+- category: "Databases & Storage"
+  items:
+    - name: PostgreSQL
+      glyph: "🐘"
+    - name: Redis
+      glyph: "🔴"
+    - name: SQLite
+      glyph: "💾"
+    - name: Raft & Consensus
+      glyph: "🛡️"

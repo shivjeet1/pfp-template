@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div>
+  <div class="section__head">
+    <h1 class="section__title">{{ .Title }}</h1>
+  </div>
+
+  <div class="post-content">{{ .Content }}</div>
+
+  <div class="rows">
+    {{ range .Pages.ByDate.Reverse }}
+    <a class="row" href="{{ .RelPermalink }}">
+      <span class="row__date">{{ .Date.Format "2006-01-02" }}</span>
+      <span class="row__main">
+        <span class="row__title">{{ .Title }}</span>
+        <span class="row__summary">{{ .Params.summary | default .Summary | truncate 150 }}</span>
+      </span>
+    </a>
+    {{ end }}
+  </div>
+
+  {{ if .Site.Params.ShowBackToTopButton }}
+    {{ partial "back-to-top.html" . }}
+  {{ end }}
+</div>
+{{ end }}
