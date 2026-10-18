@@ -34,7 +34,7 @@ To launch a working site in under 60 seconds:
 
 ```bash
 # Clone this repository
-git clone https://github.com/shivjeet1/hugo-portfolio-template.git
+git clone https://github.com/shivjeet1/pfp-template.git
 
 # Enter the example site directory
 cd hugo-portfolio-template/exampleSite
@@ -52,7 +52,7 @@ Open `http://localhost:1313` in your browser.
 1. In your existing Hugo project root:
 
 ```bash
-git submodule add https://github.com/shivjeet1/hugo-portfolio-template.git themes/hugo-portfolio-template
+git submodule add https://github.com/shivjeet1/pfp-template.git themes/hugo-portfolio-template
 ```
 
 2. Add the theme to your `hugo.toml` (or `config.toml`):
@@ -83,7 +83,7 @@ Add the theme module to your `hugo.toml`:
 ```toml
 [module]
   [[module.imports]]
-    path = "github.com/shivjeet1/hugo-portfolio-template"
+    path = "github.com/shivjeet1/pfp-template"
 ```
 
 Then update modules:
