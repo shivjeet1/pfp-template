@@ -1,6 +1,6 @@
 # Hugo Portfolio Template
 
-[![Hugo](https://img.shields.io/badge/Hugo-v0.146.0%2B-ff4088?logo=hugo&logoColor=white)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-v0.156.0%2B-ff4088?logo=hugo&logoColor=white)](https://gohugo.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Theme Showcase](https://img.shields.io/badge/themes.gohugo.io-Portfolio-success)](https://themes.gohugo.io/t/pfp-template)
 
@@ -8,14 +8,14 @@ A portfolio and blog theme for Hugo, built for developers who want a personal
 site with an interactive 3D hero, a data-driven project showcase, a technical
 skills matrix, and a full blog — with **no Node.js or npm build step**.
 
-Targets the Hugo **v0.146.0+** template system: `layouts/home.html`, a root
+Targets the Hugo **v0.156.0+** template system: `layouts/home.html`, a root
 `baseof.html`, `_partials/`, `_shortcodes/`, and separate `taxonomy.html` /
 `term.html` templates.
 
 | | |
 |---|---|
 | **Live demo** | <https://shivjeet1.github.io/pfp-template/> |
-| **Version** | 0.146.0 and later (extended) |
+| **Version** | 0.156.0 and later (extended) |
 | **License** | [MIT](LICENSE) |
 
 ![Hugo Portfolio Template screenshot](images/screenshot.png)
@@ -52,7 +52,7 @@ Shadow *by Daisuke Aizawa. Swap it for your own content.*
 
 ## Requirements
 
-- **Hugo extended, v0.146.0 or later.** Check with `hugo version`.
+- **Hugo extended, v0.156.0 or later.** Check with `hugo version`.
 - No Node.js, npm, or any other build tooling.
 
 ---
@@ -518,7 +518,7 @@ pfp-template=https://github.com/shivjeet1/pfp-template
 ```
 
 The repository already carries what the showcase requires: a `theme.toml` with
-`min_version = "0.146.0"`, an MIT `LICENSE`, this README, a 1500×1000
+`min_version = "0.156.0"`, an MIT `LICENSE`, this README, a 1500×1000
 screenshot at `images/screenshot.png`, a 900×600 thumbnail at
 `images/tn.png`, and a public demo site.
 
