@@ -12,6 +12,8 @@ Built strictly following the **modern Hugo v0.146.0+ template system architectur
 
 ![Hugo Portfolio Template Screenshot](images/screenshot.png)
 
+*Example site content is fan content based on The Eminence in Shadow by Daisuke Aizawa.*
+
 ## ✦ Features
 
 - **⬡ Interactive 3D WebGL Hero**: Built-in kinetic orbital Three.js hero with mouse drag / touch rotation, damping, and dynamic accent color reactivity. Procedurally generated with zero heavy 3D asset downloads. Can be toggled on/off in `hugo.toml`.
