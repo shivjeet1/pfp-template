@@ -14,6 +14,12 @@ Built strictly following the **modern Hugo v0.146.0+ template system architectur
 
 *Example site content is fan content based on The Eminence in Shadow by Daisuke Aizawa.*
 
+
+---
+## Live Demo
+
+[View the demo](https://shivjeet1.github.io/pfp-template/)
+
 ## ✦ Features
 
 - **⬡ Interactive 3D WebGL Hero**: Built-in kinetic orbital Three.js hero with mouse drag / touch rotation, damping, and dynamic accent color reactivity. Procedurally generated with zero heavy 3D asset downloads. Can be toggled on/off in `hugo.toml`.
@@ -138,38 +144,42 @@ theme = "pfp-template"
     backToTop = true         # Floating back-to-top button
     serviceWorker = false    # Enable PWA service worker caching
 
-  # Hero Section
-  [params.hero]
-    greeting = "Hello, I'm"
-    name = "Alex Developer"
-    role = "Software Engineer & Open Source Craftsman"
-    bio = "Building reliable distributed backend systems, high-performance web applications, and developer ergonomics."
-    resumeURL = "/resume.pdf"
-    contactURL = "mailto:hello@example.com"
+  heroScript = "/js/hero-scene.js"  # Override per-site (example uses umbra-gate.js)
 
-  # Social Links (Displayed in Header & Footer)
-  [params.social]
-    github = "https://github.com"
-    linkedin = "https://linkedin.com"
-    twitter = "https://twitter.com"
-    email = "mailto:hello@example.com"
-    rss = "/blogs/index.xml"
+  # Social icons in header, hero, and footer
+  socialIcons = [
+    {name = "github", url = "https://github.com/username"},
+    {name = "linkedin", url = "https://linkedin.com/in/username"},
+    {name = "twitter", url = "https://x.com/username"},
+    {name = "gmail", url = "mailto:hello@example.com"},
+    {name = "rss", url = "/blogs/index.xml"}
+  ]
 
 # Main Navigation Menu
 [[menus.main]]
-  name = "About"
-  url = "/about/"
+  name = "Home"
+  url = "/#home"
   weight = 1
 
 [[menus.main]]
   name = "Projects"
-  url = "/projects/"
+  url = "/#projects"
   weight = 2
 
 [[menus.main]]
-  name = "Blog"
-  url = "/blogs/"
+  name = "Blogs"
+  url = "/#blogs"
   weight = 3
+
+[[menus.main]]
+  name = "About"
+  url = "/#about"
+  weight = 4
+
+[[menus.main]]
+  name = "Contact"
+  url = "/#contact"
+  weight = 5
 ```
 
 ---
@@ -257,10 +267,10 @@ Your content goes here...
 
 ## ◑ Customizing the 3D Hero Scene
 
-The 3D hero utilizes Three.js loaded from CDN or local bundle, initialized by `static/js/hero-scene.js`.
+The 3D hero utilizes Three.js via ES module import in the browser. The example site uses `static/js/umbra-gate.js` (procedural gate scene); the theme provides `static/js/hero-scene.js` as a default alternative. It loads the script via `[params.heroScript]` (defaults to `/js/hero-scene.js`).
 - It requires **no 3D modeling software** or `.gltf` asset loading.
 - It dynamically adapts its particle and mesh materials to your `[params] accentColor` and light/dark theme.
-- To disable it completely, simply set `heroScene = false` under `[params.features]` in your `hugo.toml`.
+- To disable it completely, simply set `heroScene = false` under `[params.features]` in your `hugo.toml`. Alternatively set `heroScript` to a blank or disable via features.
 
 ---
 
@@ -285,3 +295,17 @@ Total in 48 ms
 ## § License
 
 This theme is licensed under the [MIT License](LICENSE).
+
+---
+## Theme Submission Checklist
+
+This theme meets Hugo Themes Showcase requirements:
+
+- **Hugo v0.146.0+**: Declared in theme.toml (`min_version = "0.146.0"`) and CI uses `hugo_extended_0.146.0_Linux-64bit.tar.gz`.
+- **Responsive & Accessible**: Mobile-first layout, semantic HTML, keyboard-accessible navigation, reduced-motion respected.
+- **Performance**: No Node/npm build pipeline. CSS/JS minified via Hugo Pipes. Procedural 3D loads only on home, bails out on small/data-saver devices.
+- **No non-procedural 3D assets**: Hero is fully procedural.
+- **Example Site Builds Clean**: `cd exampleSite && hugo` produces no errors/warnings on 0.146.0+.
+- **Single Theme**: Self-contained (no external CSS/JS required beyond CDN for Three.js if used).
+- **Demo URL**: GitHub Pages at [https://shivjeet1.github.io/pfp-template/](https://shivjeet1.github.io/pfp-template/).
+- **License**: MIT (see LICENSE).
