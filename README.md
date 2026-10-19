@@ -40,10 +40,20 @@ git clone https://github.com/shivjeet1/pfp-template.git
 cd pfp-template/exampleSite
 
 # Start Hugo local development server
-hugo server --themesDir ../.. -t pfp-template
+hugo server
 ```
 
 Open `http://localhost:1313` in your browser.
+
+> **Note**
+> `exampleSite/hugo.toml` sets `themesDir = "../.."`, so Hugo expects the
+> repository folder to be named `pfp-template` (matching the clone command
+> above). If you cloned or renamed it to something else, either rename the
+> folder to `pfp-template` or pass the path explicitly:
+>
+> ```bash
+> hugo server --themesDir /path/to/your/renamed/folder
+> ```
 
 ---
 
@@ -258,7 +268,7 @@ This theme complies with all requirements for inclusion in the [Hugo Themes Show
 
 ```bash
 cd exampleSite
-hugo --themesDir ../.. -t pfp-template
+hugo
 ```
 
 Output:
