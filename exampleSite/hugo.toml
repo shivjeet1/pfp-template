@@ -12,7 +12,7 @@ themesDir = "../.."
   avatarAltText = "Shadow"
   avatarURL = "/images/avatar.png"
   favicon = "/images/avatar-round-192.png"
-  appleTouchIcon = "/images/avatar-180.png"
+  appleTouchIcon = "/images/eminence.png"
   heroScript = "/js/umbra-gate.js"
   heroMeta = "Lurking • Hunting • Not Explaining"
 
