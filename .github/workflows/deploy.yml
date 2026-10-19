@@ -39,9 +39,17 @@ jobs:
         env:
           HUGO_CACHEDIR: /tmp/hugo_cache
         run: |
+          # exampleSite/hugo.toml points themesDir at "../..", which only
+          # resolves when the checkout folder is named "pfp-template".
+          # Expose the theme under a stable path so the build never depends
+          # on the repository directory name.
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/themes/pfp-template" \
+            || { mkdir -p "$RUNNER_TEMP/themes"; \
+                 ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/themes/pfp-template"; }
           cd exampleSite
           hugo \
             --minify \
+            --themesDir "$RUNNER_TEMP/themes" \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact

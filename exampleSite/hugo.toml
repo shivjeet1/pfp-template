@@ -6,7 +6,9 @@ enableRobotsTXT = true
 locale = "en"
 
 theme = "pfp-template"
-themesDir = "../.."
+# `themesDir` is intentionally omitted. Pass it at build time instead, e.g.
+#   hugo server --themesDir ../..
+# so the example site resolves the theme regardless of the checkout folder name.
 
 [params]
   avatarAltText = "Alex Chen - Systems & Software Engineer"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Language.Locale }}">
+<html lang="{{ .Language.Lang | default "en" }}">
 <head>
     <title>{{ .Permalink }}</title>
     <link rel="canonical" href="{{ .Permalink }}">
