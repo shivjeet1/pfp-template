@@ -53,30 +53,7 @@ function ready() {
         }
     }
 
-    // Elements to inject
-    const svgsToInject = document.querySelectorAll('img.svg-inject');
-    // Do the injection
-    SVGInjector(svgsToInject);
-
-    const observer = new MutationObserver(() => {
-        normalizeSvgPaths();
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-
-    function normalizeSvgPaths() {
-        document.querySelectorAll('.nav-link a .svg-inject').forEach(path => {
-            const bbox = path.getBBox();
-            const scaleX = 20 / bbox.width;
-            const scaleY = 20 / bbox.height;
-            const scale = Math.min(scaleX, scaleY);
-
-            path.setAttribute('transform', `scale(${scale}) translate(${-bbox.x}, ${-bbox.y})`);
-            path.setAttribute('stroke', 'currentColor');
-            path.setAttribute('stroke-width', '1');
-            path.setAttribute('fill', 'transparent');
-        });
-    }
+    SVGInjector(document.querySelectorAll('img.svg-inject'));
 
     const hamburgerToggle = document.getElementById('hamburger-menu-toggle');
     const hamburgerMenu = document.querySelector('.nav-hamburger-list');
@@ -99,8 +76,9 @@ window.addEventListener('scroll', () => {
     headerShadowQueued = true;
     requestAnimationFrame(() => {
         headerShadowQueued = false;
-        // On smaller screens the header is sticky sooner, so show its
-        // shadow at a lower threshold.
+        // 820 matches the breakpoint where the header collapses to the
+        // hamburger layout; drop the threshold so the shadow appears sooner
+        // in the shorter viewport.
         toggleHeaderShadow(window.innerWidth <= 820 ? 50 : 100);
     });
 }, { passive: true });

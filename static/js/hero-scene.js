@@ -228,14 +228,20 @@ async function initHeroScene() {
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  let visible = true;
-  const observer = new IntersectionObserver((entries) => {
-    visible = entries[0].isIntersecting && !document.hidden;
-  }, { threshold: 0.05 });
-  observer.observe(wrap);
+  // Track intersection and tab state separately. Collapsing both into one
+  // flag lets a tab switch clear the intersection result, which would keep
+  // the loop running while the hero is scrolled off-screen.
+  let onScreen = true;
+  let tabActive = !document.hidden;
+
+  const isRenderable = () => onScreen && tabActive;
+
+  new IntersectionObserver((entries) => {
+    onScreen = entries[0].isIntersecting;
+  }, { threshold: 0.05 }).observe(wrap);
 
   document.addEventListener('visibilitychange', () => {
-    visible = !document.hidden;
+    tabActive = !document.hidden;
   });
 
   document.querySelectorAll('.dark-theme-toggle').forEach((el) => {
@@ -248,7 +254,7 @@ async function initHeroScene() {
   if (!reduce) {
     (function step() {
       requestAnimationFrame(step);
-      if (visible) {
+      if (isRenderable()) {
         const delta = clock.getDelta();
         ring2Group.rotation.y += delta * 0.18;
         innerRing.rotation.y -= delta * 0.3;

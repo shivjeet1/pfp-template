@@ -271,6 +271,7 @@ async function initPortalScene() {
 
   const moteUniforms = {
     uColor: { value: new THREE.Color(PALETTE.light.spark) },
+    uOpacity: { value: PALETTE.light.moteOpacity },
     uPixelRatio: { value: Math.min(window.devicePixelRatio, 2) }
   };
 
@@ -293,6 +294,7 @@ async function initPortalScene() {
     `,
     fragmentShader: `
       uniform vec3 uColor;
+      uniform float uOpacity;
       varying float vAlpha;
       void main() {
         vec2 c = gl_PointCoord - 0.5;
@@ -301,7 +303,7 @@ async function initPortalScene() {
         // Soft core with a tight bright centre.
         float soft = smoothstep(0.5, 0.0, d);
         float hot = smoothstep(0.22, 0.0, d);
-        gl_FragColor = vec4(uColor, (soft * 0.55 + hot * 0.85) * vAlpha);
+        gl_FragColor = vec4(uColor, (soft * 0.55 + hot * 0.85) * vAlpha * uOpacity);
       }
     `
   });
@@ -357,7 +359,7 @@ async function initPortalScene() {
     glowMaterial.map = makeGlowTexture(p.irisArm);
     glowMaterial.needsUpdate = true;
     glowMaterial.opacity = p.glow;
-    moteMaterial.opacity = p.moteOpacity;
+    moteUniforms.uOpacity.value = p.moteOpacity;
   }
   applyTheme();
 
@@ -443,14 +445,22 @@ async function initPortalScene() {
   hint.textContent = 'Drag to rotate · Scroll to zoom';
   wrap.appendChild(hint);
 
-  // --- Render gating -------------------------------------------------------
-  let visible = true;
+  // Render gating
+  // Keep the two conditions in separate variables: the observer only knows
+  // about intersection, the visibility listener only knows about the tab.
+  // Collapsing them into one flag would let a tab switch clear the
+  // intersection result and restart the loop off-screen.
+  let onScreen = true;
+  let tabActive = !document.hidden;
+
+  const isRenderable = () => onScreen && tabActive;
+
   new IntersectionObserver(
-    (entries) => { visible = entries[0].isIntersecting && !document.hidden; },
+    (entries) => { onScreen = entries[0].isIntersecting; },
     { threshold: 0.05 }
   ).observe(wrap);
 
-  document.addEventListener('visibilitychange', () => { visible = !document.hidden; });
+  document.addEventListener('visibilitychange', () => { tabActive = !document.hidden; });
 
   // --- Loop ----------------------------------------------------------------
   const clock = new THREE.Clock();
@@ -493,7 +503,7 @@ async function initPortalScene() {
   if (!reduce) {
     (function step() {
       requestAnimationFrame(step);
-      if (!visible) return;
+      if (!isRenderable()) return;
 
       const delta = Math.min(clock.getDelta(), 0.05);
       elapsed += delta;

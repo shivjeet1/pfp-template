@@ -31,8 +31,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $title }}">
     <meta name="twitter:description" content="{{ $description }}">
-    <meta property="twitter:domain" content="{{ .Permalink }}">
-    <meta property="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:domain" content="{{ with urls.Parse .Site.BaseURL }}{{ .Host }}{{ end }}">
+    <meta name="twitter:url" content="{{ .Permalink }}">
     <meta name="twitter:image" content="{{ absURL $image }}">
 
     <link rel="canonical" href="{{ .Permalink }}">

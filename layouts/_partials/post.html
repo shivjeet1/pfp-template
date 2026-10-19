@@ -47,9 +47,23 @@
 
     <div class="post-content">
         {{ .Content }}
-        {{ if .Site.Config.Services.Disqus.Shortname }}
+        {{ $shortname := .Site.Config.Services.Disqus.Shortname }}
+        {{ if $shortname }}
         <div class="post-comments">
-            {{ partial "disqus.html" . }}
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = {{ .Permalink }};
+                    this.page.identifier = {{ .File.UniqueID | default .RelPermalink }};
+                };
+                (function () {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://{{ $shortname }}.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
         </div>
         {{ end }}
     </div>
