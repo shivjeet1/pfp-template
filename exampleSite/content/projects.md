@@ -1,51 +1,51 @@
 ---
 title: "Projects"
-summary: "System-level engineering, automated CI/CD pipelines, and high-performance backend architectures."
+summary: "Shadow magic, cursed artifacts, and architectural decisions made under existential duress."
 draft: false
 type: page
 showBackToTopButton: true
 ---
 
-## Core Engineering & Distributed Systems
+## Shadow Arts & Bloodline Curios
 
 ##
 {{< development
     link="https://github.com/example/chronos-kv"
     live="https://example.com/chronos"
-    title="Chronos Distributed Key-Value Store"
+    title="Chronos — Deferred-Death Ledger"
     date="2026-08-15"
-    summary="A distributed, consistent key-value datastore implementing Raft consensus and LSM-tree storage engines for low-latency writes."
-    lang="Rust, Raft, gRPC, Tokio"
+    summary="A distributed ledger for tracking time I no longer have. Implements eventual consistency across every timeline I am currently avoiding."
+    lang="Erasure Sigils, Blood Contracts, Async Rituals"
 >}}
 
 ##
 {{< development
     link="https://github.com/example/aero-gateway"
     live="https://example.com/aero"
-    title="AeroGateway API Management Engine"
+    title="AeroGateway — Perception Filter"
     date="2026-05-10"
-    summary="High-performance edge proxy and API gateway featuring zero-allocation JWT validation, distributed rate limiting, and dynamic telemetry routing."
-    lang="Go, eBPF, Redis, Docker"
+    summary="Edge proxy that rewrites how the world is perceived, featuring zero-latency reality substitution and ruthless narrative enforcement."
+    lang="Illusion Weaving, Memory Patching, Stealth Routing"
 >}}
 
 ---
 
-## Developer Tooling & Desktop Applications
+## Estate Infrastructure & Doomsday Provisions
 
 ##
 {{< development
     link="https://github.com/example/hypervibe"
-    title="HyperVibe Cross-Platform Terminal"
+    title="HyperVibe — Mantera Ledger Interface"
     date="2026-02-18"
-    summary="GPU-accelerated modern terminal emulator with split panes, custom shaders, and cross-platform native rendering across Linux, macOS, and Windows."
-    lang="Rust, WebGPU, Slint"
+    summary="A generational archive of the Kagenou bloodline with custom glyph rendering, cross-realm indexing, and aggressive redaction."
+    lang="Rune Script, Lineage Indexing, Cryptic Sealing"
 >}}
 
 ##
 {{< development
     link="https://github.com/example/infrapulse"
-    title="InfraPulse Automated Cloud Orchestrator"
+    title="InfraPulse — Existential Contingency Planner"
     date="2025-11-04"
-    summary="Self-healing Kubernetes operator and GitOps reconciliation engine managing ephemeral preview environments and infrastructure drift detection."
-    lang="Go, Kubernetes CRDs, Terraform"
+    summary="Self-healing estate defenses and catastrophe drills, tuned against a threat model dominated by ancient sealed dungeons."
+    lang="Warding Glyphs, Barrier Theory, Dungeon Reconnaissance"
 >}}

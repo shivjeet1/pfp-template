@@ -1,5 +1,5 @@
 ---
-author: "Alex Chen"
+author: "Cid Kagenou"
 title: "Modern Web Performance: Core Web Vitals, INP & Asset Optimization"
 slug: "modern-web-performance"
 date: 2026-06-15

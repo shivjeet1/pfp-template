@@ -1,49 +1,51 @@
-- category: "Systems & Infrastructure"
+- category: "Shadow Arts"
   items:
-    - name: Linux Internals
-      glyph: "🐧"
-    - name: Distributed Systems
-      glyph: "🌐"
-    - name: Cloud Native & Kubernetes
-      glyph: "☸️"
-    - name: Docker & Containers
-      glyph: "📦"
-    - name: System Performance Tuning
-      glyph: "⚡"
+    - name: Shadow Manipulation
+      glyph: "🌑"
+    - name: Blood Magic & Contracts
+      glyph: "🩸"
+    - name: Sealed Dungeon Delving
+      glyph: "🕯️"
+    - name: Warding Glyphs
+      glyph: "🔯"
+    - name: Perception & Illusion Weaving
+      glyph: "👁️"
 
-- category: "Programming Languages"
+- category: "Cultivation"
   items:
-    - name: Go
-      glyph: "🔷"
-    - name: Rust
-      glyph: "🦀"
-    - name: C / C++
-      glyph: "⚙️"
-    - name: TypeScript / JavaScript
+    - name: Immortality (Theoretical)
+      glyph: "♾️"
+    - name: Mana Reservoir Management
+      glyph: "🌀"
+    - name: Erasure Sigils
+      glyph: "✒️"
+    - name: Lineage & Bloodline Records
       glyph: "📜"
-    - name: Python
-      glyph: "🐍"
+    - name: Curse Management
+      glyph: "⛓️"
 
-- category: "Architecture & DevOps"
+- category: "Combat"
   items:
-    - name: CI/CD Pipelines
-      glyph: "🔄"
-    - name: Microservices Architecture
-      glyph: "🏗️"
-    - name: API Design (REST & gRPC)
-      glyph: "🔌"
-    - name: Observability & OpenTelemetry
-      glyph: "📊"
-    - name: Git & GitOps
-      glyph: "🌿"
-
-- category: "Databases & Storage"
-  items:
-    - name: PostgreSQL
-      glyph: "🐘"
-    - name: Redis
-      glyph: "🔴"
-    - name: SQLite
-      glyph: "💾"
-    - name: Raft & Consensus
+    - name: Shadow Step
+      glyph: "💨"
+    - name: Barrier Theory
       glyph: "🛡️"
+    - name: Adversarial Duelling
+      glyph: "⚔️"
+    - name: Threat Assessment
+      glyph: "🎯"
+    - name: Strategic Retreat
+      glyph: "🏃"
+
+- category: "Estate Operations"
+  items:
+    - name: Mantera Archives
+      glyph: "🏛️"
+    - name: Sealed Dungeon Security
+      glyph: "🔒"
+    - name: Incident Cover-Ups
+      glyph: "🎭"
+    - name: Existential Contingency Planning
+      glyph: "☠️"
+    - name: Managing Nosy Elders
+      glyph: "👴"

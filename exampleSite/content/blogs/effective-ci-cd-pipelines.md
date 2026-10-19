@@ -1,5 +1,5 @@
 ---
-author: "Alex Chen"
+author: "Cid Kagenou"
 title: "Architecting Zero-Downtime Automated CI/CD Pipelines with GitHub Actions"
 slug: "effective-ci-cd-pipelines"
 date: 2026-03-10

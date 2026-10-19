@@ -1,5 +1,5 @@
 ---
-author: "Alex Chen"
+author: "Cid Kagenou"
 title: "Designing Fault-Tolerant Distributed Microservices: Consensus, Quorums & Replication"
 slug: "building-distributed-systems"
 date: 2026-08-20

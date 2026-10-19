@@ -1,8 +1,8 @@
 ---
-title: "Alex Chen"
+title: "Cid Kagenou"
 showBackToTopButton: true
 ---
 
-**Systems Architecture • Cloud Infrastructure • Distributed Computing**
+**Shadow Magic • Existential Dread • The Death Of My Immortality Plan**
 
-Computer Science researcher and systems engineer focusing on low-level system development, resilient microservices architectures, and cloud-native infrastructure automation. Committed to open-source software and high-performance computing.
+Cultivator of the Shadow Affliction and self-appointed mastermind of the Kagenou family estate. Bound by a blood-curse that stole my death, my mornings, and — inconveniently — any honest accounting of how much time I have left.

@@ -1,5 +1,5 @@
 baseURL = "https://example.com/"
-title = "Alex Chen"
+title = "Cid Kagenou"
 defaultContentLanguage = "en"
 enableEmoji = true
 enableRobotsTXT = true
@@ -9,29 +9,29 @@ theme = "pfp-template"
 themesDir = "../.."
 
 [params]
-  avatarAltText = "Alex Chen - Systems & Software Engineer"
+  avatarAltText = "Cid Kagenou - Shadow Affliction Wielder"
   avatarURL = "/images/avatar.png"
   favicon = "/images/avatar-round-192.png"
   appleTouchIcon = "/images/avatar-180.png"
-  heroScript = "/js/hero-scene.js"
-  heroMeta = "Computer Science & Systems Engineering • Open Source Contributor"
+  heroScript = "/js/cid-shadow.js"
+  heroMeta = "Shadow Affliction • Seventh-Rank Adventurer • Self-Declared Genius"
 
   showBackToTopButton = true
 
   # Custom CSS & Accent Color
   cssFiles = ["css/navbar.css", "css/skills.css"]
-  accentColor = "#4B61D1"
+  accentColor = "#8B2FC9"
 
-  description = "Systems Architecture, Cloud Infrastructure & Distributed Computing."
-  author = "Alex Chen"
+  description = "Shadow Magic, Existential Dread & The Death Of My Immortality Plan."
+  author = "Cid Kagenou"
   metaKeywords = [
-    "Software Engineer",
-    "Systems Architecture",
-    "DevOps",
-    "Cloud Native",
-    "Go",
-    "Rust",
-    "Distributed Systems"
+    "Shadow Magic",
+    "Shadow Affliction",
+    "Cid Kagenou",
+    "Eminence in Shadow",
+    "Adventurer",
+    "Dark Fantasy",
+    "Existential Crisis"
   ]
 
   footer = "All rights reserved. Built with Hugo Portfolio Template."
@@ -41,7 +41,7 @@ socialIcons = [
   {name = "github", url = "https://github.com/username"},
   {name = "linkedin", url = "https://linkedin.com/in/username"},
   {name = "twitter", url = "https://x.com/username"},
-  {name = "gmail", url = "mailto:alex@example.com"},
+  {name = "gmail", url = "mailto:cid@example.com"},
   {name = "rss", url = "/blogs/index.xml"}
 ]
 
