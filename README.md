@@ -502,8 +502,11 @@ console for errors.
 relative to `assets/`, so the entry is `css/filename.css`, not
 `filename.css`. A missing file is skipped silently.
 
-**Avatar or favicon not showing.** Paths are resolved from `static/`, so a
-leading slash (`/images/avatar.png`) is required.
+**Avatar or favicon not showing.** Use relative paths for static assets in config
+(e.g., `images/avatar.png`) rather than a leading slash (`/images/avatar.png`).
+Leading slashes resolve to the domain root and 404 when the site is served from
+a subpath (like GitHub Pages project sites). Hugo will join relative paths to
+your `baseURL`.
 
 ---
 
@@ -516,11 +519,6 @@ adding your theme to `themes.txt` in alphabetical order:
 ```
 pfp-template=https://github.com/shivjeet1/pfp-template
 ```
-
-The repository already carries what the showcase requires: a `theme.toml` with
-`min_version = "0.156.0"`, an MIT `LICENSE`, this README, a 1500×1000
-screenshot at `images/screenshot.png`, a 900×600 thumbnail at
-`images/tn.png`, and a public demo site.
 
 ---
 
