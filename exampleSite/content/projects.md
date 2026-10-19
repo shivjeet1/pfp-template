@@ -10,6 +10,16 @@ showBackToTopButton: true
 
 ##
 {{< development
+    link="https://github.com/example/umbra-gate"
+    live="https://example.com/umbra-gate"
+    title="Umbra Gate — Portal to Another World"
+    date="2026-09-28"
+    summary="A tear between worlds bound open with blood sigils. Steers the gate, holds the far side shut, and quietly consumes the caster's remaining years."
+    lang="Dimensional Rifts, Blood Sigils, Reality Anchoring"
+>}}
+
+##
+{{< development
     link="https://github.com/example/chronos-kv"
     live="https://example.com/chronos"
     title="Chronos — Deferred-Death Ledger"

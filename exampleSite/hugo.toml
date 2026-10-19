@@ -13,13 +13,13 @@ themesDir = "../.."
   avatarURL = "/images/avatar.png"
   favicon = "/images/avatar-round-192.png"
   appleTouchIcon = "/images/avatar-180.png"
-  heroScript = "/js/cid-shadow.js"
+  heroScript = "/js/umbra-gate.js"
   heroMeta = "Shadow Affliction • Seventh-Rank Adventurer • Self-Declared Genius"
 
   showBackToTopButton = true
 
   # Custom CSS & Accent Color
-  cssFiles = ["css/navbar.css", "css/skills.css"]
+  cssFiles = ["css/navbar.css", "css/skills.css", "css/portal.css"]
   accentColor = "#8B2FC9"
 
   description = "Shadow Magic, Existential Dread & The Death Of My Immortality Plan."
