@@ -8,7 +8,7 @@ description: "Failing loudly, verifying first, leaving nothing dark."
 summary: "My cells act without my sight. Each act is checked before it counts. My previous world built machines to do the same and called it continuous delivery."
 weight: 30
 type: post
-image: "/images/avatar.png"
+image: "images/avatar.png"
 showTableOfContents: true
 draft: false
 ---

@@ -9,11 +9,14 @@ theme = "pfp-template"
 themesDir = "../.."
 
 [params]
+  # Asset paths are relative on purpose. A leading slash makes Hugo emit them
+  # verbatim, which resolves against the domain root and 404s whenever the
+  # site is served from a subpath. Relative paths get joined onto baseURL.
   avatarAltText = "Shadow"
-  avatarURL = "/images/avatar.png"
-  favicon = "/images/avatar-round-192.png"
-  appleTouchIcon = "/images/eminence.png"
-  heroScript = "/js/umbra-gate.js"
+  avatarURL = "images/avatar.png"
+  favicon = "images/avatar-round-192.png"
+  appleTouchIcon = "images/eminence.png"
+  heroScript = "js/umbra-gate.js"
   heroMeta = "Lurking • Hunting • Not Explaining"
 
   showBackToTopButton = true

@@ -132,15 +132,15 @@ theme = "pfp-template"
 [params]
   # Shown in the header. Falls back to images/avatar-round-192.png and
   # images/avatar-180.png when omitted.
-  avatarURL = "/images/avatar.png"
+  avatarURL = "images/avatar.png"
   avatarAltText = "Your Name"
-  favicon = "/images/avatar-round-192.png"
-  faviconLarge = "/images/avatar-512.png"
-  appleTouchIcon = "/images/eminence.png"
+  favicon = "images/avatar-round-192.png"
+  faviconLarge = "images/avatar-512.png"
+  appleTouchIcon = "images/eminence.png"
 
   # Hero. heroScript is loaded on the home page only; the default is the
   # theme's own scene at /js/hero-scene.js.
-  heroScript = "/js/hero-scene.js"
+  heroScript = "js/hero-scene.js"
   heroMeta = "A short line under the hero"
 
   # Buttons
@@ -346,7 +346,7 @@ description: "Meta description; also used for social cards."
 summary: "Shown in blog listings."
 weight: 10          # ordering within the section
 type: post
-image: "/images/avatar.png"   # social card image
+image: "images/avatar.png"   # social card image
 showTableOfContents: true     # renders the sidebar TOC
 ---
 

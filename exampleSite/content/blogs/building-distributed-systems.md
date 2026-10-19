@@ -8,7 +8,7 @@ description: "How a world without magic solved disagreement."
 summary: "My cells cannot all see each other. This is how another world solved it. No magic required."
 weight: 10
 type: post
-image: "/images/avatar.png"
+image: "images/avatar.png"
 showTableOfContents: true
 draft: false
 ---

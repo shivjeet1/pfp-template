@@ -8,7 +8,7 @@ description: "A blade that arrives late is not a blade."
 summary: "They shaved milliseconds from pages for a living. They were measuring something I learned as a child: a strike is only as good as the moment it lands."
 weight: 20
 type: post
-image: "/images/avatar.png"
+image: "images/avatar.png"
 showTableOfContents: true
 draft: false
 ---
