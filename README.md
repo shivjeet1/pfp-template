@@ -12,21 +12,21 @@ Built strictly following the **modern Hugo v0.146.0+ template system architectur
 
 ![Hugo Portfolio Template Screenshot](images/screenshot.png)
 
-## ✨ Features
+## ✦ Features
 
-- **🎮 Interactive 3D WebGL Hero**: Built-in kinetic orbital Three.js hero with mouse drag / touch rotation, damping, and dynamic accent color reactivity. Procedurally generated with zero heavy 3D asset downloads. Can be toggled on/off in `hugo.toml`.
-- **🌓 Smooth Dark / Light Mode**: Instant toggle with local storage persistence and zero flash of unstyled content (`FOUC`).
-- **💼 Structured Projects Showcase**: Rendered from `data/projects.yml` with badges for languages/frameworks, star counts, GitHub links, and live demo buttons.
-- **🛠️ Technical Skills Grid**: Categorized skill matrices (Languages, Frameworks, Cloud, Databases) rendered from `data/skills.yml` with clean iconography.
-- **📝 High-Impact Blog & Articles**: Clean typography (Lato), reading time estimates, responsive table of contents with scrollspy, and tag/category taxonomies.
-- **⚡ Blazing Fast**: Zero external CSS/JS compilation pipelines required. Built-in Hugo Pipes minification and fingerprinting. 100/100 Lighthouse performance potential.
-- **🔍 SEO & Social Cards**: Auto-generated OpenGraph, Twitter Card meta tags, and structured JSON-LD.
-- **📱 Fully Responsive**: Thoughtful layouts engineered for mobile phones, tablets, and ultrawide monitors.
-- **🌐 Offline Ready**: Built-in Service Worker caching strategy for offline reading.
+- **⬡ Interactive 3D WebGL Hero**: Built-in kinetic orbital Three.js hero with mouse drag / touch rotation, damping, and dynamic accent color reactivity. Procedurally generated with zero heavy 3D asset downloads. Can be toggled on/off in `hugo.toml`.
+- **◐ Smooth Dark / Light Mode**: Instant toggle with local storage persistence and zero flash of unstyled content (`FOUC`).
+- **▤ Structured Projects Showcase**: Rendered from `data/projects.yml` with badges for languages/frameworks, star counts, GitHub links, and live demo buttons.
+- **✚ Technical Skills Grid**: Categorized skill matrices (Languages, Frameworks, Cloud, Databases) rendered from `data/skills.yml` with clean iconography.
+- **✎ High-Impact Blog & Articles**: Clean typography (Lato), reading time estimates, responsive table of contents with scrollspy, and tag/category taxonomies.
+- **⟡ Blazing Fast**: Zero external CSS/JS compilation pipelines required. Built-in Hugo Pipes minification and fingerprinting. 100/100 Lighthouse performance potential.
+- **◎ SEO & Social Cards**: Auto-generated OpenGraph, Twitter Card meta tags, and structured JSON-LD.
+- **▭ Fully Responsive**: Thoughtful layouts engineered for mobile phones, tablets, and ultrawide monitors.
+- **⊙ Offline Ready**: Built-in Service Worker caching strategy for offline reading.
 
 ---
 
-## 🚀 Quick Start
+## ▸ Quick Start
 
 ### Option 1: Use the Example Site (Fastest)
 
@@ -104,7 +104,7 @@ hugo mod get -u
 
 ---
 
-## ⚙️ Configuration
+## ⚙ Configuration
 
 Here is a sample `hugo.toml` configuration:
 
@@ -172,7 +172,7 @@ theme = "pfp-template"
 
 ---
 
-## 📂 Data-Driven Showcases
+## ⊞ Data-Driven Showcases
 
 ### Projects (`data/projects.yml`)
 
@@ -202,27 +202,27 @@ Organize your technical proficiencies in `data/skills.yml`:
 - category: "Languages & Core"
   skills:
     - name: "Go"
-      icon: "⚡"
+      icon: "⟡"
     - name: "Rust"
-      icon: "🦀"
+      icon: "⬢"
     - name: "TypeScript / JavaScript"
-      icon: "🔷"
+      icon: "◆"
     - name: "Python"
-      icon: "🐍"
+      icon: "◈"
 
 - category: "Platforms & Systems"
   skills:
     - name: "Kubernetes & Docker"
-      icon: "🐳"
+      icon: "◉"
     - name: "PostgreSQL & Redis"
-      icon: "🐘"
+      icon: "⬡"
     - name: "Linux & eBPF"
-      icon: "🐧"
+      icon: "▣"
 ```
 
 ---
 
-## 📝 Writing Content
+## ✎ Writing Content
 
 ### Creating a New Blog Post
 
@@ -253,7 +253,7 @@ Your content goes here...
 
 ---
 
-## 🎨 Customizing the 3D Hero Scene
+## ◑ Customizing the 3D Hero Scene
 
 The 3D hero utilizes Three.js loaded from CDN or local bundle, initialized by `static/js/hero-scene.js`.
 - It requires **no 3D modeling software** or `.gltf` asset loading.
@@ -262,7 +262,7 @@ The 3D hero utilizes Three.js loaded from CDN or local bundle, initialized by `s
 
 ---
 
-## 🧪 Testing the Showcase
+## ✓ Testing the Showcase
 
 This theme complies with all requirements for inclusion in the [Hugo Themes Showcase](https://themes.gohugo.io):
 
@@ -280,6 +280,6 @@ Total in 48 ms
 
 ---
 
-## 📄 License
+## § License
 
 This theme is licensed under the [MIT License](LICENSE).

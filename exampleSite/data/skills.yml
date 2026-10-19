@@ -1,51 +1,51 @@
 - category: "Shadow"
   items:
     - name: Manipulation
-      glyph: "🌑"
+      glyph: "☾"
     - name: Spatial Gates
-      glyph: "🚪"
+      glyph: "⊞"
     - name: Reinforcement
-      glyph: "🛡"
+      glyph: "✚"
     - name: Regeneration
-      glyph: "🩹"
+      glyph: "◌"
     - name: Confinement
-      glyph: "🔒"
+      glyph: "⊘"
 
 - category: "The Sword"
   items:
     - name: Swordsmanship
       glyph: "⚔"
     - name: Evasion
-      glyph: "💨"
+      glyph: "⇉"
     - name: Ultimate Technique
-      glyph: "💥"
+      glyph: "✷"
     - name: Perception
-      glyph: "👁"
+      glyph: "◉"
     - name: Bare Hands
-      glyph: "✊"
+      glyph: "✊︎"
 
 - category: "The Garden"
   items:
     - name: Command
-      glyph: "🌸"
+      glyph: "✿"
     - name: The Seven Shadows
-      glyph: "⚔"
+      glyph: "✦"
     - name: The Cult
       glyph: "☠"
     - name: The Wisdom
-      glyph: "🌍"
+      glyph: "⊛"
     - name: Becoming No One
-      glyph: "🎭"
+      glyph: "◐"
 
 - category: "The Count"
   items:
     - name: Extended Lifespan
-      glyph: "♾"
+      glyph: "∞"
     - name: Curse Breaking
-      glyph: "💜"
+      glyph: "◈"
     - name: Possession Cure
       glyph: "⚕"
     - name: Long Con
-      glyph: "🌘"
+      glyph: "◔"
     - name: Patience
-      glyph: "⏳"
+      glyph: "⧖"
