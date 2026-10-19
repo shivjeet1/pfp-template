@@ -45,9 +45,14 @@
     <link rel="icon" type="image/png" href="{{ $favicon | relURL }}">
     <link rel="apple-touch-icon" href="{{ $appleTouchIcon | relURL }}">
 
+    {{/* normalize.css is fetched with media="print" so it does not block the
+         first paint, then promoted to media="all" once it has loaded. The
+         media attribute has to be switched in JS; without that the sheet
+         applies to printing only and never to the screen. */}}
     {{ $cssNormalize := resources.Get "css/normalize.min.css" }}
     {{ with $cssNormalize }}
-    <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" media="print">
+    <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" media="print" onload="this.media='all';this.onload=null">
+    <noscript><link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}"></noscript>
     {{ end }}
 
     {{ $cssMain := resources.Get "css/main.css" | minify }}

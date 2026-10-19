@@ -9,7 +9,6 @@ const THEME_TO_ICON_TEXT_CLASS = {
     'dark': 'Dark mode',
     'light': 'Light mode'
 };
-let toggleIcon = '';
 let darkThemeCss = '';
 
 const HEADING_TO_TOC_CLASS = {
@@ -19,6 +18,26 @@ const HEADING_TO_TOC_CLASS = {
     'H4': 'level-4'
 }
 
+// Reading or writing localStorage throws outright when storage is blocked
+// (Safari private browsing, cookies disabled). Unhandled, that would abort
+// the rest of ready() and take reveal animations, the copy button, the
+// service worker and the table of contents down with it.
+function readStoredTheme() {
+    try {
+        return localStorage.getItem(THEME_PREF_STORAGE_KEY);
+    } catch (e) {
+        return null;
+    }
+}
+
+function writeStoredTheme(theme) {
+    try {
+        localStorage.setItem(THEME_PREF_STORAGE_KEY, theme);
+    } catch (e) {
+        /* storage unavailable; the toggle still works for this page view */
+    }
+}
+
 function ready() {
     feather.replace({ 'stroke-width': 1, width: 20, height: 20 });
     setThemeByUserPref();
@@ -26,13 +45,11 @@ function ready() {
     initCopyEmail();
     registerServiceWorker();
 
-    if (document.querySelector('main#content > .container') !== null &&
-        document.querySelector('main#content > .container').classList.contains('post')) {
+    const postContainer = document.querySelector('main#content > .container.post');
+    if (postContainer !== null) {
         if (document.getElementById('TableOfContents') !== null) {
             fixTocItemsIndent();
             createScrollSpy();
-        } else {
-            document.querySelector('main#content > .container.post').style.display = "block";
         }
     }
 
@@ -61,48 +78,87 @@ function ready() {
         });
     }
 
-    document.getElementById('hamburger-menu-toggle').addEventListener('click', () => {
-        const hamburgerMenu = document.getElementsByClassName('nav-hamburger-list')[0]
-        const hamburgerMenuToggleTarget = document.getElementById("hamburger-menu-toggle-target")
-        if (hamburgerMenu.classList.contains('visibility-hidden')) {
-            hamburgerMenu.classList.remove('visibility-hidden');
-            hamburgerMenuToggleTarget.setAttribute("aria-checked", "true");
-        } else {
-            hamburgerMenu.classList.add('visibility-hidden');
-            hamburgerMenuToggleTarget.setAttribute("aria-checked", "false");
-        }
-    })
+    const hamburgerToggle = document.getElementById('hamburger-menu-toggle');
+    const hamburgerMenu = document.querySelector('.nav-hamburger-list');
+    const hamburgerMenuToggleTarget = document.getElementById('hamburger-menu-toggle-target');
+    if (hamburgerToggle && hamburgerMenu && hamburgerMenuToggleTarget) {
+        hamburgerToggle.addEventListener('click', () => {
+            const collapsed = hamburgerMenu.classList.toggle('visibility-hidden');
+            hamburgerMenuToggleTarget.setAttribute('aria-checked', String(!collapsed));
+        });
+    }
 }
 
+// Both scroll-driven effects run once per animation frame rather than once
+// per scroll event, so a fast trackpad flick does not queue up hundreds of
+// redundant layout reads.
+let headerShadowQueued = false;
+
 window.addEventListener('scroll', () => {
-    if (window.innerWidth <= 820) {
-        // For smaller screen, show shadow earlier
-        toggleHeaderShadow(50);
-    } else {
-        toggleHeaderShadow(100);
-    }
-});
+    if (headerShadowQueued) return;
+    headerShadowQueued = true;
+    requestAnimationFrame(() => {
+        headerShadowQueued = false;
+        // On smaller screens the header is sticky sooner, so show its
+        // shadow at a lower threshold.
+        toggleHeaderShadow(window.innerWidth <= 820 ? 50 : 100);
+    });
+}, { passive: true });
 
 function fixTocItemsIndent() {
-    document.querySelectorAll('#TableOfContents a').forEach($tocItem => {
-        const itemId = $tocItem.getAttribute("href").substring(1)
-        $tocItem.classList.add(HEADING_TO_TOC_CLASS[document.getElementById(itemId).tagName]);
+    document.querySelectorAll('#TableOfContents a').forEach(tocItem => {
+        const itemId = tocItem.getAttribute("href").substring(1);
+        const heading = document.getElementById(itemId);
+        if (!heading) return;
+        const level = HEADING_TO_TOC_CLASS[heading.tagName];
+        if (level) tocItem.classList.add(level);
     });
 }
 
 function createScrollSpy() {
-    var elements = document.querySelectorAll('#toc a');
-    document.addEventListener('scroll', function() {
-        elements.forEach(function(element) {
-            const boundingRect = document.getElementById(element.getAttribute('href').substring(1)).getBoundingClientRect();
-            if (boundingRect.top <= 55 && boundingRect.bottom >= 0) {
-                elements.forEach(function(elem) {
-                    elem.classList.remove('active');
-                });
-                element.classList.add('active');
+    // Resolve each link to its heading once. A TOC entry whose target is
+    // missing would otherwise throw inside the scroll handler.
+    const entries = Array.from(document.querySelectorAll('#toc a'))
+        .map(link => {
+            const heading = document.getElementById(link.getAttribute('href').substring(1));
+            return heading ? { link, heading } : null;
+        })
+        .filter(Boolean);
+
+    if (!entries.length) return;
+
+    const OFFSET = 55;
+    let activeLink = null;
+    let queued = false;
+
+    function update() {
+        queued = false;
+
+        // Entries are in document order, so the last heading above the offset
+        // is the one being read. This picks deterministically rather than
+        // whichever match happened to be visited last.
+        let current = null;
+        for (const entry of entries) {
+            if (entry.heading.getBoundingClientRect().top <= OFFSET) {
+                current = entry.link;
+            } else {
+                break;
             }
-        });
-    });
+        }
+
+        if (current === activeLink) return;
+        if (activeLink) activeLink.classList.remove('active');
+        if (current) current.classList.add('active');
+        activeLink = current;
+    }
+
+    document.addEventListener('scroll', () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(update);
+    }, { passive: true });
+
+    update();
 }
 
 function toggleHeaderShadow(scrollY) {
@@ -119,7 +175,7 @@ function toggleHeaderShadow(scrollY) {
 
 function setThemeByUserPref() {
     darkThemeCss = document.getElementById("dark-theme");
-    const savedTheme = localStorage.getItem(THEME_PREF_STORAGE_KEY) ||
+    const savedTheme = readStoredTheme() ||
         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     const darkThemeToggles = document.querySelectorAll('.dark-theme-toggle');
     setTheme(savedTheme, darkThemeToggles);
@@ -127,7 +183,8 @@ function setThemeByUserPref() {
 }
 
 function toggleTheme(event) {
-    toggleIcon = event.currentTarget.querySelector("a svg.feather");
+    const toggleIcon = event.currentTarget.querySelector("a svg.feather");
+    if (!toggleIcon) return;
     if (toggleIcon.classList[1] === THEME_TO_ICON_CLASS.dark) {
         setThemeAndStore('light', [event.currentTarget]);
     } else if (toggleIcon.classList[1] === THEME_TO_ICON_CLASS.light) {
@@ -145,7 +202,7 @@ function setTheme(themeToSet, targets) {
 
 function setThemeAndStore(themeToSet, targets) {
     setTheme(themeToSet, targets);
-    localStorage.setItem(THEME_PREF_STORAGE_KEY, themeToSet);
+    writeStoredTheme(themeToSet);
 }
 
 function initReveal() {
