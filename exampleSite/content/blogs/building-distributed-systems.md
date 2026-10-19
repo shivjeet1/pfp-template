@@ -1,11 +1,11 @@
 ---
 author: "Cid Kagenou"
-title: "The Wisdom of the Shadows: Consensus, Quorums & Why Your Cells Disagree"
+title: "Consensus"
 slug: "building-distributed-systems"
 date: 2026-08-20
-tags: ["Wisdom of the Shadows", "Consensus", "Architecture", "Earth Notes"]
-description: "An account of how a world without magic solved the problem of disagreement, offered as an aid to Shadow Garden's distributed cells."
-summary: "Shadow Garden operates as many cells that cannot all see each other. Their problem is the oldest one in my previous world: agreement across failure. Here is how it was solved there — no magic required."
+tags: ["Wisdom of the Shadows", "Consensus"]
+description: "How a world without magic solved disagreement."
+summary: "My cells cannot all see each other. This is how another world solved it. No magic required."
 weight: 10
 type: post
 image: "/images/avatar.png"

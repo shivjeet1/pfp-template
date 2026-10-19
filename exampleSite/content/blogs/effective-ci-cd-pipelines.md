@@ -1,11 +1,11 @@
 ---
 author: "Cid Kagenou"
-title: "The Wisdom of the Shadows: Automating What Must Never Be Missed"
+title: "Never Missed"
 slug: "effective-ci-cd-pipelines"
 date: 2026-03-10
-tags: ["Wisdom of the Shadows", "Automation", "Earth Notes"]
-description: "Notes from my former world on building pipelines that fail loudly, verify themselves, and never leave a branch in the dark."
-summary: "Shadow Garden's cells act without my sight. That only works because each act is checked before it counts. My previous world built entire machines to do the same, and called it continuous delivery."
+tags: ["Wisdom of the Shadows", "Automation"]
+description: "Failing loudly, verifying first, leaving nothing dark."
+summary: "My cells act without my sight. Each act is checked before it counts. My previous world built machines to do the same and called it continuous delivery."
 weight: 30
 type: post
 image: "/images/avatar.png"

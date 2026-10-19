@@ -1,21 +1,31 @@
 ---
 title: "Projects"
-summary: "Shadow Garden operations, magical breakthroughs, and the Wisdom of the Shadows."
+summary: "A short list. The rest is classified."
 draft: false
 type: page
 showBackToTopButton: true
 ---
 
-## Shadow Garden & Its Operations
+## The Garden
 
 ##
 {{< development
     link="https://github.com/example/shadow-garden"
     live="https://example.com/shadow-garden"
-    title="Shadow Garden — Founding & Expansion"
+    title="Shadow Garden"
     date="2026-09-28"
-    summary="Founded at ten years old with a single cured elf and an invented cult. Now a global clandestine organization run by Alpha, dismantling the Cult of Diablos branch by branch."
+    summary="Founded at ten. Still growing. Do not ask to see the ledger."
     lang="Clandestine Ops, Coded Comms, Distributed Cells"
+>}}
+
+##
+{{< development
+    link="https://github.com/example/umbra-gate"
+    live="https://example.com/umbra-gate"
+    title="Umbra Gate"
+    date="2026-08-02"
+    summary="A door held open by will alone. It closes the moment I look away."
+    lang="Spatial Gates, Shadow Space, Reinforced Thresholds"
 >}}
 
 ##
@@ -23,49 +33,35 @@ showBackToTopButton: true
     link="https://github.com/example/possession-cure"
     title="The Possession Cure"
     date="2026-06-14"
-    summary="The breakthrough that started everything: suppressing the magical overload that consumes the bloodline of the Three Heroes. Cured Alpha, Claire, and all Seven Shadows."
+    summary="What the Three Heroes left behind. Undone."
     lang="Magic Control, Mana Confinement, Curse Breaking"
 >}}
 
-## The Wisdom of the Shadows
-
-##
-{{< development
-    link="https://github.com/example/umbra-gate"
-    live="https://example.com/umbra-gate"
-    title="Umbra Gate — Shadow Spatial Translocation"
-    date="2026-08-02"
-    summary="Opening and holding a passage through shadow itself for rapid repositioning. Collapsing a gate under load remains the part I have not solved."
-    lang="Spatial Gates, Shadow Space, Reinforced Thresholds"
->}}
+## The Disguises
 
 ##
 {{< development
     link="https://github.com/example/mitsugoshi"
-    title="Mitsugoshi Company — The Lawful Face"
+    title="Mitsugoshi Company"
     date="2026-04-20"
-    summary="The commercial front that funds Shadow Garden, built on ideas I mentioned once and forgot. Gamma runs it; the paperwork is apparently the most dangerous part."
+    summary="A lawful company with an unlawful purpose."
     lang="Corporate Structure, Trade Networks, Front Operations"
 >}}
-
----
-
-## Discipline & Equipment
 
 ##
 {{< development
     link="https://github.com/example/slime-bodysuit"
-    title="Slime Bodysuit & Disguise Doctrine"
+    title="Slime Bodysuit"
     date="2026-02-08"
-    summary="A self-conforming suit for shifting silhouette, height and apparent build, refined by Epsilon and later mechanized by Eta into a full face-changing machine."
+    summary="Change the silhouette. Change the face. Become no one."
     lang="Slime Craft, Silhouette Shifting, Illegible Records"
 >}}
 
 ##
 {{< development
     link="https://github.com/example/war-chronicles"
-    title="The War Chronicles of Shadow-sama"
+    title="The War Chronicles"
     date="2025-11-16"
-    summary="Beta's published account of my exploits. I supplied the material; she supplied the narrative. It has become required reading across several kingdoms."
+    summary="Beta writes it. I speak it. The world believes it."
     lang="Propaganda, Public Narrative, Kingdom-Scale Reach"
 >}}

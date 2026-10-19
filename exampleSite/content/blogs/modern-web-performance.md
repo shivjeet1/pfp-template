@@ -1,11 +1,11 @@
 ---
 author: "Cid Kagenou"
-title: "The Wisdom of the Shadows: Speed as a Form of Mercy"
+title: "Speed"
 slug: "modern-web-performance"
 date: 2026-06-15
-tags: ["Wisdom of the Shadows", "Performance", "Earth Notes"]
-description: "What my previous world learned about responsiveness, and why a blade that arrives late is not a blade at all."
-summary: "In my former world, engineers spent their lives shaving milliseconds from pages. They were measuring something I had already known as a child: a strike is only as good as the moment it lands."
+tags: ["Wisdom of the Shadows", "Performance"]
+description: "A blade that arrives late is not a blade."
+summary: "They shaved milliseconds from pages for a living. They were measuring something I learned as a child: a strike is only as good as the moment it lands."
 weight: 20
 type: post
 image: "/images/avatar.png"

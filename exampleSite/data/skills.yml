@@ -1,64 +1,51 @@
-- category: "Shadow Magic"
+- category: "Shadow"
   items:
-    - name: Shadow Manipulation
+    - name: Manipulation
       glyph: "🌑"
     - name: Spatial Gates
       glyph: "🚪"
-    - name: Magic Reinforcement
+    - name: Reinforcement
       glyph: "🛡️"
-    - name: Cellular Regeneration
+    - name: Regeneration
       glyph: "🩹"
-    - name: Mana Confinement
+    - name: Confinement
       glyph: "🔒"
 
 - category: "The Sword"
   items:
     - name: Swordsmanship
       glyph: "⚔️"
-    - name: Evasion & Parry
+    - name: Evasion
       glyph: "💨"
     - name: Ultimate Technique
       glyph: "💥"
-    - name: Reading an Opponent
+    - name: Perception
       glyph: "👁️"
-    - name: Bare-Handed Combat
+    - name: Bare Hands
       glyph: "✊"
 
-- category: "Shadow Wisdom"
+- category: "The Garden"
   items:
-    - name: Another World's Knowledge
-      glyph: "🌍"
-    - name: Infiltration & Disguise
-      glyph: "🎭"
-    - name: Coded Correspondence
-      glyph: "🔐"
-    - name: Propaganda & Narrative
-      glyph: "📜"
-    - name: Front Companies
-      glyph: "🏢"
-
-- category: "Leadership"
-  items:
-    - name: Shadow Garden
+    - name: Command
       glyph: "🌸"
-    - name: Cult of Diablos
-      glyph: "☠️"
-    - name: Training the Seven Shadows
+    - name: The Seven Shadows
       glyph: "⚔️"
-    - name: Evasion of Nobility
-      glyph: "🎩"
-    - name: Preserving the Mundane
+    - name: The Cult
+      glyph: "☠️"
+    - name: The Wisdom
+      glyph: "🌍"
+    - name: Becoming No One
       glyph: "🎭"
 
-- category: "Longevity"
+- category: "The Count"
   items:
     - name: Extended Lifespan
       glyph: "♾️"
     - name: Curse Breaking
       glyph: "💜"
-    - name: Slime Bodysuit Craft
-      glyph: "🫧"
     - name: Possession Cure
       glyph: "⚕️"
-    - name: Bandit Patrols (Funding)
-      glyph: "🏴"
+    - name: Long Con
+      glyph: "🌘"
+    - name: Patience
+      glyph: "⏳"

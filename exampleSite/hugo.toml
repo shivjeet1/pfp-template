@@ -9,12 +9,12 @@ theme = "pfp-template"
 themesDir = "../.."
 
 [params]
-  avatarAltText = "Cid Kagenou, also known as Shadow"
+  avatarAltText = "Shadow"
   avatarURL = "/images/avatar.png"
   favicon = "/images/avatar-round-192.png"
   appleTouchIcon = "/images/avatar-180.png"
   heroScript = "/js/umbra-gate.js"
-  heroMeta = "Lord of Shadow Garden • Eminence in Shadow • Keeper of the Wisdom of the Shadows"
+  heroMeta = "Lurking • Hunting • Not Explaining"
 
   showBackToTopButton = true
 
@@ -22,7 +22,7 @@ themesDir = "../.."
   cssFiles = ["css/navbar.css", "css/skills.css", "css/portal.css"]
   accentColor = "#8B2FC9"
 
-  description = "Shadow Garden, the Wisdom of the Shadows, and a long game measured in centuries."
+  description = "I lurk in the shadows and hunt the shadows."
   author = "Cid Kagenou"
   metaKeywords = [
     "Cid Kagenou",
