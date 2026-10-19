@@ -135,6 +135,7 @@ theme = "pfp-template"
   avatarURL = "/images/avatar.png"
   avatarAltText = "Your Name"
   favicon = "/images/avatar-round-192.png"
+  faviconLarge = "/images/avatar-512.png"
   appleTouchIcon = "/images/eminence.png"
 
   # Hero. heroScript is loaded on the home page only; the default is the
@@ -241,8 +242,9 @@ socialIcons = [
 |---|---|---|---|
 | `avatarURL` | string | — | Image in the header, and the OpenGraph fallback |
 | `avatarAltText` | string | `avatar` | Alt text for the header image |
-| `favicon` | path | `images/avatar-round-192.png` | Favicon |
-| `appleTouchIcon` | path | `images/avatar-180.png` | iOS home-screen icon |
+| `favicon` | path | `images/avatar-round-192.png` | Favicon, declared at `sizes="192x192"` |
+| `faviconLarge` | path | `images/avatar-512.png` | Favicon, declared at `sizes="512x512"` |
+| `appleTouchIcon` | path | `images/avatar-180.png` | iOS home-screen icon (`180x180`, kept square — iOS masks it) |
 | `heroScript` | path | `/js/hero-scene.js` | Hero scene loaded on the home page |
 | `heroMeta` | string | — | Small line beneath the hero buttons |
 | `description` | string | — | Hero tagline and meta description fallback |

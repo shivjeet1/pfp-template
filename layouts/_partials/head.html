@@ -40,10 +40,16 @@
     <link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
     {{ end }}
 
+    {{/* The favicon is round, so the artwork already has transparent corners
+         and no border-radius is needed here. Declaring every size lets the
+         browser pick the sharpest match instead of scaling the 192px one up.
+         apple-touch-icon stays square: iOS applies its own mask to it. */}}
     {{ $favicon := .Site.Params.Favicon | default "images/avatar-round-192.png" }}
+    {{ $faviconLarge := .Site.Params.FaviconLarge | default "images/avatar-512.png" }}
     {{ $appleTouchIcon := .Site.Params.AppleTouchIcon | default "images/avatar-180.png" }}
-    <link rel="icon" type="image/png" href="{{ $favicon | relURL }}">
-    <link rel="apple-touch-icon" href="{{ $appleTouchIcon | relURL }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ $favicon | relURL }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ $faviconLarge | relURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $appleTouchIcon | relURL }}">
 
     {{/* normalize.css is fetched with media="print" so it does not block the
          first paint, then promoted to media="all" once it has loaded. The
