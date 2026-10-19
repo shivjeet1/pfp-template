@@ -9,12 +9,12 @@ theme = "pfp-template"
 themesDir = "../.."
 
 [params]
-  avatarAltText = "Cid Kagenou - Shadow Affliction Wielder"
+  avatarAltText = "Cid Kagenou, also known as Shadow"
   avatarURL = "/images/avatar.png"
   favicon = "/images/avatar-round-192.png"
   appleTouchIcon = "/images/avatar-180.png"
   heroScript = "/js/umbra-gate.js"
-  heroMeta = "Shadow Affliction • Seventh-Rank Adventurer • Self-Declared Genius"
+  heroMeta = "Lord of Shadow Garden • Eminence in Shadow • Keeper of the Wisdom of the Shadows"
 
   showBackToTopButton = true
 
@@ -22,16 +22,17 @@ themesDir = "../.."
   cssFiles = ["css/navbar.css", "css/skills.css", "css/portal.css"]
   accentColor = "#8B2FC9"
 
-  description = "Shadow Magic, Existential Dread & The Death Of My Immortality Plan."
+  description = "Shadow Garden, the Wisdom of the Shadows, and a long game measured in centuries."
   author = "Cid Kagenou"
   metaKeywords = [
-    "Shadow Magic",
-    "Shadow Affliction",
     "Cid Kagenou",
     "Eminence in Shadow",
-    "Adventurer",
+    "Shadow Garden",
+    "Shadow Magic",
+    "Alpha",
+    "The Seven Shadows",
     "Dark Fantasy",
-    "Existential Crisis"
+    "Light Novel"
   ]
 
   footer = "All rights reserved. Built with Hugo Portfolio Template."

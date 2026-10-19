@@ -1,12 +1,12 @@
 ---
-title: "Blogs"
+title: "The Wisdom of the Shadows"
 date: 2026-09-01
-description: "Technical write-ups, architecture breakdowns, and systems engineering logs."
+description: "Fragments of my previous world, offered as the Wisdom of the Shadows."
 type: page
 ---
 
-## Technical Articles & Architecture Notes
+## The Wisdom of the Shadows
 
-Detailed write-ups exploring distributed systems, cloud infrastructure, and software performance optimization.
+Eta builds devices. Gamma builds markets. Both of them built them from things I said in passing and then forgot I had said. These are the notes themselves — scraps of a world that had no magic and solved its problems anyway.
 
-Explore the articles below.
+Read on, if you are curious. I am told it is instructive.

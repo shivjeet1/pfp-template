@@ -1,11 +1,11 @@
 ---
 author: "Cid Kagenou"
-title: "Modern Web Performance: Core Web Vitals, INP & Asset Optimization"
+title: "The Wisdom of the Shadows: Speed as a Form of Mercy"
 slug: "modern-web-performance"
 date: 2026-06-15
-tags: ["Performance", "Web Vitals", "JavaScript", "Optimization"]
-description: "How to audit and optimize web applications for Interaction to Next Paint (INP), Largest Contentful Paint (LCP), and Cumulative Layout Shift (CLS)."
-summary: "Web performance is directly correlated with user conversion and search visibility. Here is a practical engineering guide to debugging main thread bottlenecks and optimizing Core Web Vitals."
+tags: ["Wisdom of the Shadows", "Performance", "Earth Notes"]
+description: "What my previous world learned about responsiveness, and why a blade that arrives late is not a blade at all."
+summary: "In my former world, engineers spent their lives shaving milliseconds from pages. They were measuring something I had already known as a child: a strike is only as good as the moment it lands."
 weight: 20
 type: post
 image: "/images/avatar.png"

@@ -1,11 +1,11 @@
 ---
 author: "Cid Kagenou"
-title: "Architecting Zero-Downtime Automated CI/CD Pipelines with GitHub Actions"
+title: "The Wisdom of the Shadows: Automating What Must Never Be Missed"
 slug: "effective-ci-cd-pipelines"
 date: 2026-03-10
-tags: ["DevOps", "CI/CD", "GitHub Actions", "Automation"]
-description: "Best practices for designing secure, hermetic, and high-speed automated testing and continuous deployment workflows."
-summary: "Automated pipelines are the heartbeat of modern software delivery. Learn how to optimize cache layers, configure ephemeral preview environments, and deploy without service interruption."
+tags: ["Wisdom of the Shadows", "Automation", "Earth Notes"]
+description: "Notes from my former world on building pipelines that fail loudly, verify themselves, and never leave a branch in the dark."
+summary: "Shadow Garden's cells act without my sight. That only works because each act is checked before it counts. My previous world built entire machines to do the same, and called it continuous delivery."
 weight: 30
 type: post
 image: "/images/avatar.png"

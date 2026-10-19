@@ -1,61 +1,71 @@
 ---
 title: "Projects"
-summary: "Shadow magic, cursed artifacts, and architectural decisions made under existential duress."
+summary: "Shadow Garden operations, magical breakthroughs, and the Wisdom of the Shadows."
 draft: false
 type: page
 showBackToTopButton: true
 ---
 
-## Shadow Arts & Bloodline Curios
+## Shadow Garden & Its Operations
+
+##
+{{< development
+    link="https://github.com/example/shadow-garden"
+    live="https://example.com/shadow-garden"
+    title="Shadow Garden — Founding & Expansion"
+    date="2026-09-28"
+    summary="Founded at ten years old with a single cured elf and an invented cult. Now a global clandestine organization run by Alpha, dismantling the Cult of Diablos branch by branch."
+    lang="Clandestine Ops, Coded Comms, Distributed Cells"
+>}}
+
+##
+{{< development
+    link="https://github.com/example/possession-cure"
+    title="The Possession Cure"
+    date="2026-06-14"
+    summary="The breakthrough that started everything: suppressing the magical overload that consumes the bloodline of the Three Heroes. Cured Alpha, Claire, and all Seven Shadows."
+    lang="Magic Control, Mana Confinement, Curse Breaking"
+>}}
+
+## The Wisdom of the Shadows
 
 ##
 {{< development
     link="https://github.com/example/umbra-gate"
     live="https://example.com/umbra-gate"
-    title="Umbra Gate — Portal to Another World"
-    date="2026-09-28"
-    summary="A tear between worlds bound open with blood sigils. Steers the gate, holds the far side shut, and quietly consumes the caster's remaining years."
-    lang="Dimensional Rifts, Blood Sigils, Reality Anchoring"
+    title="Umbra Gate — Shadow Spatial Translocation"
+    date="2026-08-02"
+    summary="Opening and holding a passage through shadow itself for rapid repositioning. Collapsing a gate under load remains the part I have not solved."
+    lang="Spatial Gates, Shadow Space, Reinforced Thresholds"
 >}}
 
 ##
 {{< development
-    link="https://github.com/example/chronos-kv"
-    live="https://example.com/chronos"
-    title="Chronos — Deferred-Death Ledger"
-    date="2026-08-15"
-    summary="A distributed ledger for tracking time I no longer have. Implements eventual consistency across every timeline I am currently avoiding."
-    lang="Erasure Sigils, Blood Contracts, Async Rituals"
->}}
-
-##
-{{< development
-    link="https://github.com/example/aero-gateway"
-    live="https://example.com/aero"
-    title="AeroGateway — Perception Filter"
-    date="2026-05-10"
-    summary="Edge proxy that rewrites how the world is perceived, featuring zero-latency reality substitution and ruthless narrative enforcement."
-    lang="Illusion Weaving, Memory Patching, Stealth Routing"
+    link="https://github.com/example/mitsugoshi"
+    title="Mitsugoshi Company — The Lawful Face"
+    date="2026-04-20"
+    summary="The commercial front that funds Shadow Garden, built on ideas I mentioned once and forgot. Gamma runs it; the paperwork is apparently the most dangerous part."
+    lang="Corporate Structure, Trade Networks, Front Operations"
 >}}
 
 ---
 
-## Estate Infrastructure & Doomsday Provisions
+## Discipline & Equipment
 
 ##
 {{< development
-    link="https://github.com/example/hypervibe"
-    title="HyperVibe — Mantera Ledger Interface"
-    date="2026-02-18"
-    summary="A generational archive of the Kagenou bloodline with custom glyph rendering, cross-realm indexing, and aggressive redaction."
-    lang="Rune Script, Lineage Indexing, Cryptic Sealing"
+    link="https://github.com/example/slime-bodysuit"
+    title="Slime Bodysuit & Disguise Doctrine"
+    date="2026-02-08"
+    summary="A self-conforming suit for shifting silhouette, height and apparent build, refined by Epsilon and later mechanized by Eta into a full face-changing machine."
+    lang="Slime Craft, Silhouette Shifting, Illegible Records"
 >}}
 
 ##
 {{< development
-    link="https://github.com/example/infrapulse"
-    title="InfraPulse — Existential Contingency Planner"
-    date="2025-11-04"
-    summary="Self-healing estate defenses and catastrophe drills, tuned against a threat model dominated by ancient sealed dungeons."
-    lang="Warding Glyphs, Barrier Theory, Dungeon Reconnaissance"
+    link="https://github.com/example/war-chronicles"
+    title="The War Chronicles of Shadow-sama"
+    date="2025-11-16"
+    summary="Beta's published account of my exploits. I supplied the material; she supplied the narrative. It has become required reading across several kingdoms."
+    lang="Propaganda, Public Narrative, Kingdom-Scale Reach"
 >}}

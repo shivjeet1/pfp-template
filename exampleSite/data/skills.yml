@@ -1,55 +1,64 @@
-- category: "Shadow Arts"
+- category: "Shadow Magic"
   items:
     - name: Shadow Manipulation
       glyph: "🌑"
-    - name: Blood Magic & Contracts
-      glyph: "🩸"
-    - name: Sealed Dungeon Delving
-      glyph: "🕯️"
-    - name: Dimensional Rift Theory
-      glyph: "🌀"
-    - name: Warding Glyphs
-      glyph: "🔯"
-    - name: Perception & Illusion Weaving
-      glyph: "👁️"
-
-- category: "Cultivation"
-  items:
-    - name: Immortality (Theoretical)
-      glyph: "♾️"
-    - name: Mana Reservoir Management
-      glyph: "🔮"
-    - name: Portal Architecture
+    - name: Spatial Gates
       glyph: "🚪"
-    - name: Erasure Sigils
-      glyph: "✒️"
-    - name: Lineage & Bloodline Records
-      glyph: "📜"
-    - name: Curse Management
-      glyph: "⛓️"
-
-- category: "Combat"
-  items:
-    - name: Shadow Step
-      glyph: "💨"
-    - name: Barrier Theory
+    - name: Magic Reinforcement
       glyph: "🛡️"
-    - name: Adversarial Duelling
-      glyph: "⚔️"
-    - name: Threat Assessment
-      glyph: "🎯"
-    - name: Strategic Retreat
-      glyph: "🏃"
-
-- category: "Estate Operations"
-  items:
-    - name: Mantera Archives
-      glyph: "🏛️"
-    - name: Sealed Dungeon Security
+    - name: Cellular Regeneration
+      glyph: "🩹"
+    - name: Mana Confinement
       glyph: "🔒"
-    - name: Incident Cover-Ups
+
+- category: "The Sword"
+  items:
+    - name: Swordsmanship
+      glyph: "⚔️"
+    - name: Evasion & Parry
+      glyph: "💨"
+    - name: Ultimate Technique
+      glyph: "💥"
+    - name: Reading an Opponent
+      glyph: "👁️"
+    - name: Bare-Handed Combat
+      glyph: "✊"
+
+- category: "Shadow Wisdom"
+  items:
+    - name: Another World's Knowledge
+      glyph: "🌍"
+    - name: Infiltration & Disguise
       glyph: "🎭"
-    - name: Existential Contingency Planning
+    - name: Coded Correspondence
+      glyph: "🔐"
+    - name: Propaganda & Narrative
+      glyph: "📜"
+    - name: Front Companies
+      glyph: "🏢"
+
+- category: "Leadership"
+  items:
+    - name: Shadow Garden
+      glyph: "🌸"
+    - name: Cult of Diablos
       glyph: "☠️"
-    - name: Managing Nosy Elders
-      glyph: "👴"
+    - name: Training the Seven Shadows
+      glyph: "⚔️"
+    - name: Evasion of Nobility
+      glyph: "🎩"
+    - name: Preserving the Mundane
+      glyph: "🎭"
+
+- category: "Longevity"
+  items:
+    - name: Extended Lifespan
+      glyph: "♾️"
+    - name: Curse Breaking
+      glyph: "💜"
+    - name: Slime Bodysuit Craft
+      glyph: "🫧"
+    - name: Possession Cure
+      glyph: "⚕️"
+    - name: Bandit Patrols (Funding)
+      glyph: "🏴"

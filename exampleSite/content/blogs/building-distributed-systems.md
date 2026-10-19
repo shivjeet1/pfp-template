@@ -1,11 +1,11 @@
 ---
 author: "Cid Kagenou"
-title: "Designing Fault-Tolerant Distributed Microservices: Consensus, Quorums & Replication"
+title: "The Wisdom of the Shadows: Consensus, Quorums & Why Your Cells Disagree"
 slug: "building-distributed-systems"
 date: 2026-08-20
-tags: ["Distributed Systems", "Raft", "Consensus", "Architecture"]
-description: "A deep dive into consensus protocols, partition tolerance, and write replication in modern distributed datastores."
-summary: "Building distributed systems requires managing split-brain scenarios, network partitions, and clock drift. Here is an architectural breakdown of consensus algorithms and practical trade-offs."
+tags: ["Wisdom of the Shadows", "Consensus", "Architecture", "Earth Notes"]
+description: "An account of how a world without magic solved the problem of disagreement, offered as an aid to Shadow Garden's distributed cells."
+summary: "Shadow Garden operates as many cells that cannot all see each other. Their problem is the oldest one in my previous world: agreement across failure. Here is how it was solved there — no magic required."
 weight: 10
 type: post
 image: "/images/avatar.png"
