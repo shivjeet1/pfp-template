@@ -1,311 +1,531 @@
 # Hugo Portfolio Template
 
 [![Hugo](https://img.shields.io/badge/Hugo-v0.146.0%2B-ff4088?logo=hugo&logoColor=white)](https://gohugo.io/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Theme Showcase](https://img.shields.io/badge/themes.gohugo.io-Portfolio-success)](https://themes.gohugo.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Theme Showcase](https://img.shields.io/badge/themes.gohugo.io-Portfolio-success)](https://themes.gohugo.io/t/pfp-template)
 
-A modern, high-performance developer portfolio and blog theme for Hugo. Designed for software engineers, designers, and open-source creators who want a clean personal website featuring an interactive 3D WebGL hero, seamless dark/light mode, structured project showcase, and technical skill matrices—with **zero Node.js or npm build dependencies**.
+A portfolio and blog theme for Hugo, built for developers who want a personal
+site with an interactive 3D hero, a data-driven project showcase, a technical
+skills matrix, and a full blog — with **no Node.js or npm build step**.
 
-Built strictly following the **modern Hugo v0.146.0+ template system architecture** (`layouts/home.html`, root `baseof.html`, `_partials/`, `_shortcodes/`, separated `taxonomy.html`/`term.html`).
+Targets the Hugo **v0.146.0+** template system: `layouts/home.html`, a root
+`baseof.html`, `_partials/`, `_shortcodes/`, and separate `taxonomy.html` /
+`term.html` templates.
 
----
+| | |
+|---|---|
+| **Live demo** | <https://shivjeet1.github.io/pfp-template/> |
+| **Version** | 0.146.0 and later (extended) |
+| **License** | [MIT](LICENSE) |
 
-![Hugo Portfolio Template Screenshot](images/screenshot.png)
+![Hugo Portfolio Template screenshot](images/screenshot.png)
 
-*Example site content is fan content based on The Eminence in Shadow by Daisuke Aizawa.*
-
-
----
-## Live Demo
-
-[View the demo](https://shivjeet1.github.io/pfp-template/)
-
-## ✦ Features
-
-- **⬡ Interactive 3D WebGL Hero**: Built-in kinetic orbital Three.js hero with mouse drag / touch rotation, damping, and dynamic accent color reactivity. Procedurally generated with zero heavy 3D asset downloads. Can be toggled on/off in `hugo.toml`.
-- **◐ Smooth Dark / Light Mode**: Instant toggle with local storage persistence and zero flash of unstyled content (`FOUC`).
-- **▤ Structured Projects Showcase**: Rendered from `data/projects.yml` with badges for languages/frameworks, star counts, GitHub links, and live demo buttons.
-- **✚ Technical Skills Grid**: Categorized skill matrices (Languages, Frameworks, Cloud, Databases) rendered from `data/skills.yml` with clean iconography.
-- **✎ High-Impact Blog & Articles**: Clean typography (Lato), reading time estimates, responsive table of contents with scrollspy, and tag/category taxonomies.
-- **⟡ Blazing Fast**: Zero external CSS/JS compilation pipelines required. Built-in Hugo Pipes minification and fingerprinting. 100/100 Lighthouse performance potential.
-- **◎ SEO & Social Cards**: Auto-generated OpenGraph, Twitter Card meta tags, and structured JSON-LD.
-- **▭ Fully Responsive**: Thoughtful layouts engineered for mobile phones, tablets, and ultrawide monitors.
-- **⊙ Offline Ready**: Built-in Service Worker caching strategy for offline reading.
+*The bundled example site is fan content set in the world of* The Eminence in
+Shadow *by Daisuke Aizawa. Swap it for your own content.*
 
 ---
 
-## ▸ Quick Start
+## Features
 
-### Option 1: Use the Example Site (Fastest)
+- **Interactive 3D WebGL hero** — drag to rotate, scroll to zoom. Fully
+  procedural geometry and shaders, so there are no `.gltf` models or texture
+  downloads. Adapts to your accent colour and the active light/dark theme.
+- **Dark and light mode** — instant toggle, persisted in `localStorage`, with
+  the saved theme applied before first paint so there is no flash of the wrong
+  colours.
+- **Data-driven project showcase** — rendered from `data/projects.yml` with
+  date, summary, language chips, and an optional live-site link.
+- **Skills matrix** — categorised cards rendered from `data/skills.yml`, with
+  either a text glyph or a Feather icon per entry.
+- **Blog** — reading time, table of contents with scrollspy, and tag/category
+  taxonomies.
+- **No build pipeline** — CSS and JS are bundled, minified, and fingerprinted
+  by Hugo Pipes. Nothing to install beyond Hugo.
+- **SEO and social cards** — OpenGraph, Twitter Card, and JSON-LD generated
+  from your content.
+- **Offline reading** — an optional service worker with a stale-while-revalidate
+  cache for assets.
+- **Accessibility and motion** — semantic markup, keyboard-navigable menu, and
+  `prefers-reduced-motion` support throughout.
 
-To launch a working site in under 60 seconds:
+---
+
+## Requirements
+
+- **Hugo extended, v0.146.0 or later.** Check with `hugo version`.
+- No Node.js, npm, or any other build tooling.
+
+---
+
+## Installation
+
+### As a Hugo module (recommended)
 
 ```bash
-# Clone this repository
-git clone https://github.com/shivjeet1/pfp-template.git
-
-# Enter the example site directory
-cd pfp-template/exampleSite
-
-# Start Hugo local development server
-hugo server
+hugo mod init github.com/you/your-site
 ```
 
-Open `http://localhost:1313` in your browser.
-
-> **Note**
-> `exampleSite/hugo.toml` sets `themesDir = "../.."`, so Hugo expects the
-> repository folder to be named `pfp-template` (matching the clone command
-> above). If you cloned or renamed it to something else, either rename the
-> folder to `pfp-template` or pass the path explicitly:
->
-> ```bash
-> hugo server --themesDir /path/to/your/renamed/folder
-> ```
-
----
-
-### Option 2: Add to an Existing Hugo Site
-
-1. In your existing Hugo project root:
-
-```bash
-git submodule add https://github.com/shivjeet1/pfp-template.git themes/pfp-template
-```
-
-2. Add the theme to your `hugo.toml` (or `config.toml`):
+Add the import to your `hugo.toml`:
 
 ```toml
 theme = "pfp-template"
-```
 
-3. Copy the starter content and data templates from the theme's `exampleSite`:
-
-```bash
-cp -r themes/pfp-template/exampleSite/content ./
-cp -r themes/pfp-template/exampleSite/data ./
-```
-
----
-
-### Option 3: Hugo Modules
-
-If your site is configured as a Hugo Module:
-
-```bash
-hugo mod init my-portfolio
-```
-
-Add the theme module to your `hugo.toml`:
-
-```toml
 [module]
   [[module.imports]]
     path = "github.com/shivjeet1/pfp-template"
 ```
 
-Then update modules:
+Then fetch it:
 
 ```bash
 hugo mod get -u
 ```
 
----
+### As a Git submodule
 
-## ⚙ Configuration
+```bash
+git submodule add https://github.com/shivjeet1/pfp-template.git themes/pfp-template
+```
 
-Here is a sample `hugo.toml` configuration:
+Then set the theme in `hugo.toml`:
 
 ```toml
-baseURL = "https://example.org/"
-title = "Alex Developer | Software Engineer & Creator"
+theme = "pfp-template"
+```
+
+### Running the bundled example site
+
+```bash
+git clone https://github.com/shivjeet1/pfp-template.git
+cd pfp-template/exampleSite
+hugo server
+```
+
+Open <http://localhost:1313>.
+
+> **Note**
+> `exampleSite/hugo.toml` sets `themesDir = "../.."`, which resolves the theme
+> relative to the repository root. That means the checkout directory has to be
+> named `pfp-template`. If you renamed it, either rename it back or pass the
+> path explicitly:
+>
+> ```bash
+> hugo server --themesDir /path/to/your/renamed/directory
+> ```
+
+---
+
+## Configuration
+
+`exampleSite/hugo.toml` is the reference configuration. This is the same file
+with the demo persona replaced by placeholder values:
+
+```toml
+baseURL = "https://example.com/"
+title = "Your Name"
 defaultContentLanguage = "en"
+enableEmoji = true
+enableRobotsTXT = true
+
 theme = "pfp-template"
 
-# Hugo v0.146.0+ Taxonomies
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-
 [params]
-  description = "Software engineer specializing in distributed systems, web architectures, and developer tooling."
-  author = "Alex Developer"
-  avatarURL = "images/avatar.svg"
+  # Shown in the header. Falls back to images/avatar-round-192.png and
+  # images/avatar-180.png when omitted.
+  avatarURL = "/images/avatar.png"
+  avatarAltText = "Your Name"
+  favicon = "/images/avatar-round-192.png"
+  appleTouchIcon = "/images/eminence.png"
+
+  # Hero. heroScript is loaded on the home page only; the default is the
+  # theme's own scene at /js/hero-scene.js.
+  heroScript = "/js/hero-scene.js"
+  heroMeta = "A short line under the hero"
+
+  # Buttons
+  CtaProjectsText = "Projects"
+  CtaBlogsText = "Blog"
+  resumeURL = "/resume.pdf"
+  ResumeText = "Resume (PDF)"
+
+  # Home section headings
+  ProjectsSectionTitle = "Selected Work"
+  ProjectsSectionLinkText = "All projects"
+  BlogsSectionTitle = "Writing"
+  BlogsSectionLinkText = "All posts"
+  AboutSectionTitle = "About"
+  ContactSectionTitle = "Contact"
+
+  showBackToTopButton = true
+
+  # Extra stylesheets, resolved from your assets/css directory and minified.
+  cssFiles = ["css/navbar.css", "css/skills.css"]
+
   accentColor = "#4B61D1"
   fontSize = "1.1rem"
-  metaKeywords = ["software engineer", "developer", "golang", "rust", "typescript", "open-source"]
-  dateFormat = "Jan 2, 2006"
-  footerText = "Crafted with Hugo and pfp-template."
 
-  # Feature Toggles
-  [params.features]
-    heroScene = true         # Enables the procedural Three.js 3D kinetic orb
-    socialShare = true       # Social sharing links on blog posts
-    backToTop = true         # Floating back-to-top button
-    serviceWorker = false    # Enable PWA service worker caching
+  description = "One or two sentences describing what you do."
+  author = "Your Name"
+  metaKeywords = ["your keywords", "and a few more"]
+  dateFormat = "January 2, 2006"
+  footer = "All rights reserved."
 
-  heroScript = "/js/hero-scene.js"  # Override per-site (example uses umbra-gate.js)
+  # Raw HTML injected into <head>, into the comment area below each post, and
+  # before </body>. Rendered with safeHTML, so only put markup you trust here.
+  # CustomHeadHTML = "<link rel='preconnect' href='https://fonts.example'>"
+  # CustomCommentHTML = "<script defer src='https://comments.example/t.js'></script>"
+  # CustomFooterHTML = "<script defer src='https://analytics.example/t.js'></script>"
 
-  # Social icons in header, hero, and footer
-  socialIcons = [
-    {name = "github", url = "https://github.com/username"},
-    {name = "linkedin", url = "https://linkedin.com/in/username"},
-    {name = "twitter", url = "https://x.com/username"},
-    {name = "gmail", url = "mailto:hello@example.com"},
-    {name = "rss", url = "/blogs/index.xml"}
-  ]
+  # Hide the theme credit in the footer
+  DisableThemeCredit = false
 
-# Main Navigation Menu
-[[menus.main]]
-  name = "Home"
-  url = "/#home"
-  weight = 1
+  # Post listing options
+  DisplayReadingTime = true
+  TogglePreviousAndNextButtons = true
 
-[[menus.main]]
-  name = "Projects"
-  url = "/#projects"
-  weight = 2
+  # Tags that should not appear as meta on posts
+  # [params.Hidden]
+  #   Tags = ["Drafts"]
+  #   TagsPostDate = []
+  #   TagsPostDescription = []
 
-[[menus.main]]
-  name = "Blogs"
-  url = "/#blogs"
-  weight = 3
+# Social icons rendered in the header, hero, and footer.
+# Recognised names: github, linkedin, twitter, gmail, rss
+socialIcons = [
+  {name = "github", url = "https://github.com/username"},
+  {name = "linkedin", url = "https://linkedin.com/in/username"},
+  {name = "twitter", url = "https://x.com/username"},
+  {name = "gmail", url = "mailto:hello@example.com"},
+  {name = "rss", url = "/blogs/index.xml"}
+]
 
-[[menus.main]]
-  name = "About"
-  url = "/#about"
-  weight = 4
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/#home"
+    weight = 1
 
-[[menus.main]]
-  name = "Contact"
-  url = "/#contact"
-  weight = 5
+  [[menu.main]]
+    name = "Projects"
+    url = "/#projects"
+    weight = 2
+
+  [[menu.main]]
+    name = "Blogs"
+    url = "/#blogs"
+    weight = 3
+
+  [[menu.main]]
+    name = "About"
+    url = "/#about"
+    weight = 4
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/#contact"
+    weight = 5
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 4
+    ordered = false
+
+[minify]
+  minifyOutput = true
 ```
+
+### Parameters
+
+| Parameter | Type | Default | Purpose |
+|---|---|---|---|
+| `avatarURL` | string | — | Image in the header, and the OpenGraph fallback |
+| `avatarAltText` | string | `avatar` | Alt text for the header image |
+| `favicon` | path | `images/avatar-round-192.png` | Favicon |
+| `appleTouchIcon` | path | `images/avatar-180.png` | iOS home-screen icon |
+| `heroScript` | path | `/js/hero-scene.js` | Hero scene loaded on the home page |
+| `heroMeta` | string | — | Small line beneath the hero buttons |
+| `description` | string | — | Hero tagline and meta description fallback |
+| `author` | string | — | Used in JSON-LD |
+| `metaKeywords` | []string | — | Merged with each post's tags |
+| `accentColor` | hex | `#4B61D1` | Accent colour, also feeds the hero scene |
+| `fontSize` | CSS length | `1.1rem` | Root font size |
+| `dateFormat` | Go layout | `January 2, 2006` | Post date format |
+| `footer` | string | — | Footer text |
+| `cssFiles` | []string | — | Extra stylesheets from `assets/css` |
+| `showBackToTopButton` | bool | `false` | Floating back-to-top button |
+| `resumeURL` | path | — | Adds a resume button when set |
+| `DisplayReadingTime` | bool | `false` | Reading time on posts |
+| `TogglePreviousAndNextButtons` | bool | `false` | Prev/next links on posts |
+| `DisableThemeCredit` | bool | `false` | Removes the theme credit from the footer |
+| `CustomHeadHTML` | HTML | — | Injected before `</head>` |
+| `CustomCommentHTML` | HTML | — | Injected into `#comments` below each post |
+| `CustomFooterHTML` | HTML | — | Injected before `</body>` |
+| `Hidden.Tags` | []string | — | Tags excluded from post meta |
+| `ProjectsSectionTitle` | string | `Selected Work` | Home section heading |
+| `ProjectsSectionLinkText` | string | `All projects` | Link beside the heading |
+| `BlogsSectionTitle` | string | `Writing` | Home section heading |
+| `BlogsSectionLinkText` | string | `All posts` | Link beside the heading |
+| `AboutSectionTitle` | string | `About` | Home section heading |
+| `ContactSectionTitle` | string | `Contact` | Home section heading |
+| `CtaProjectsText` | string | `Projects` | Hero button label |
+| `CtaBlogsText` | string | `Blog` | Hero button label |
+| `ResumeText` | string | `Resume (PDF)` | Hero button label |
+| `socialIcons` | []table | — | Social links (see above) |
 
 ---
 
-## ⊞ Data-Driven Showcases
+## Projects showcase
 
-### Projects (`data/projects.yml`)
-
-Add your highlighted work into `data/projects.yml`:
-
-```yaml
-- title: "Distributed Task Queue"
-  description: "High-throughput, persistent asynchronous task processing engine in Go."
-  languages: ["Go", "Redis", "gRPC", "Docker"]
-  stars: 1250
-  github: "https://github.com/example/task-queue"
-  link: "https://queue.example.org"
-
-- title: "Real-time Metrics Dashboard"
-  description: "WebGL and WebSockets streaming telemetry monitoring platform."
-  languages: ["TypeScript", "Three.js", "WebSockets"]
-  stars: 480
-  github: "https://github.com/example/metrics-app"
-  link: "https://metrics.example.org"
-```
-
-### Skills Matrix (`data/skills.yml`)
-
-Organize your technical proficiencies in `data/skills.yml`:
+The home page renders the first four entries from `data/projects.yml`; the
+`/projects/` page lists all of them.
 
 ```yaml
-- category: "Languages & Core"
-  skills:
-    - name: "Go"
-      icon: "⟡"
-    - name: "Rust"
-      icon: "⬢"
-    - name: "TypeScript / JavaScript"
-      icon: "◆"
-    - name: "Python"
-      icon: "◈"
-
-- category: "Platforms & Systems"
-  skills:
-    - name: "Kubernetes & Docker"
-      icon: "◉"
-    - name: "PostgreSQL & Redis"
-      icon: "⬡"
-    - name: "Linux & eBPF"
-      icon: "▣"
+# data/projects.yml
+- title: "Chronos"
+  summary: "A distributed key-value store built on Raft."
+  date: "2026-08-15"
+  lang: "Rust, gRPC, Tokio"   # comma-separated; rendered as chips
+  link: "https://github.com/example/chronos"
+  live: "https://chronos.example.org"   # optional; renders a "Live site" chip
 ```
+
+| Field | Required | Notes |
+|---|---|---|
+| `title` | yes | Project name |
+| `summary` | yes | One line of description |
+| `date` | no | Shown in the left column |
+| `lang` | no | Comma-separated string, split into chips |
+| `link` | no | Falls back to `#` |
+| `live` | no | Adds a "Live site" chip |
 
 ---
 
-## ✎ Writing Content
+## Skills matrix
 
-### Creating a New Blog Post
+Render the matrix anywhere in Markdown with the `skills` shortcode. It reads
+`data/skills.yml`.
+
+```yaml
+# data/skills.yml
+- category: "Shadow"
+  items:
+    - name: "Manipulation"
+      glyph: "☾"     # any text glyph
+    - name: "Spatial Gates"
+      glyph: "⊞"
+    - name: "Perception"
+      icon: "eye"    # or a Feather icon name
+```
+
+```markdown
+{{</* skills */>}}
+```
+
+Each item takes either `glyph` (a text glyph, rendered as-is) or `icon` (a
+[Feather](https://feathericons.com/) icon name). `glyph` takes precedence.
+
+---
+
+## Blog posts
 
 ```bash
 hugo new blogs/my-first-post.md
 ```
 
-Front matter example:
-
 ```markdown
 ---
-title: "Architecting Modern High-Throughput Web Services"
+title: "Architecting High-Throughput Web Services"
 date: 2026-03-24T10:00:00Z
 draft: false
-tags: ["Architecture", "Go", "Distributed Systems"]
+tags: ["Architecture", "Distributed Systems"]
 categories: ["Engineering"]
-description: "Insights on designing resilient microservices with low-latency communication."
-toc: true
+description: "Meta description; also used for social cards."
+summary: "Shown in blog listings."
+weight: 10          # ordering within the section
+type: post
+image: "/images/avatar.png"   # social card image
+showTableOfContents: true     # renders the sidebar TOC
 ---
 
 Your content goes here...
 ```
 
-### Shortcodes Included
+Supported front matter: `title`, `date`, `lastmod`, `draft`, `tags`,
+`categories`, `description`, `summary`, `weight`, `type`, `slug`, `author`,
+`image`, `showTableOfContents`, and `h1` for overriding the rendered heading.
 
-- **`{{< skills >}}`**: Automatically renders the interactive skills matrix anywhere in Markdown from `data/skills.yml`.
-- **`{{< development >}}`**: Displays an elegant "Under Construction / Development" banner for work-in-progress sections.
+Add a table of contents to any post with `showTableOfContents: true`. Depth is
+controlled by the `[markup.tableOfContents]` settings in `hugo.toml`.
+
+### Shortcodes
+
+| Shortcode | Purpose |
+|---|---|
+| `{{< skills >}}` | Renders the skills matrix from `data/skills.yml` |
+| `{{< development >}}` | Renders a project row, used on the projects page |
+
+`development` accepts `title`, `link`, `live`, `date`, `summary`, and `lang`:
+
+```markdown
+{{</* development
+    title="Shadow Garden"
+    link="https://github.com/example/shadow-garden"
+    live="https://example.com/shadow-garden"
+    date="2026-09-28"
+    summary="Founded at ten. Still growing."
+    lang="Clandestine Ops, Coded Comms"
+*/>}}
+```
 
 ---
 
-## ◑ Customizing the 3D Hero Scene
+## The hero scene
 
-The 3D hero utilizes Three.js via ES module import in the browser. The example site uses `static/js/umbra-gate.js` (procedural gate scene); the theme provides `static/js/hero-scene.js` as a default alternative. It loads the script via `[params.heroScript]` (defaults to `/js/hero-scene.js`).
-- It requires **no 3D modeling software** or `.gltf` asset loading.
-- It dynamically adapts its particle and mesh materials to your `[params] accentColor` and light/dark theme.
-- To disable it completely, simply set `heroScene = false` under `[params.features]` in your `hugo.toml`. Alternatively set `heroScript` to a blank or disable via features.
+The hero is rendered by a Three.js module loaded on the home page only. The
+theme ships two scenes:
+
+- `static/js/hero-scene.js` — the theme default, a kinetic orbital form.
+- `exampleSite/static/js/umbra-gate.js` — the demo's iris-and-rim gate, set in
+  `heroScript`.
+
+Point `heroScript` at your own file to replace it:
+
+```toml
+[params]
+  heroScript = "/js/my-scene.js"
+```
+
+Notes on the demo scene, which the default follows:
+
+- Geometry is generated at runtime. No model files, no texture downloads.
+- Drag rotates; the wheel zooms, but only while the pointer is over the canvas.
+  Ctrl/Meta + wheel still zooms the page normally, so page scrolling is never
+  hijacked. `+` and `-` work as a keyboard fallback.
+- `prefers-reduced-motion: reduce` renders a single static frame.
+- Below 900px wide, or with data saver on, the scene is skipped and the canvas
+  is hidden.
+
+To remove the hero entirely, comment out the `hero__canvas-wrap` block in
+`layouts/home.html` and drop `heroScript`.
 
 ---
 
-## ✓ Testing the Showcase
+## Customisation
 
-This theme complies with all requirements for inclusion in the [Hugo Themes Showcase](https://themes.gohugo.io):
+Site-level styles go in `assets/css/` and are registered through `cssFiles`:
+
+```toml
+[params]
+  cssFiles = ["css/navbar.css", "css/skills.css"]
+```
+
+Each file is minified by Hugo Pipes at build time. Theme styles live in
+`assets/css/main.css` (light) and `assets/css/dark.css` (dark); override them
+with your own rules loaded after.
+
+To change the palette globally, set `accentColor`. The hero scene reads the
+same value, so it re-tints without any extra configuration.
+
+---
+
+## Offline support
+
+`static/sw.js` registers a service worker that caches assets with a
+stale-while-revalidate strategy. It stands down on `localhost` (so local
+previews are not served stale) and when the connection reports data saver.
+
+---
+
+## Privacy
+
+The theme sets no cookies and loads no third-party trackers. The only value
+persisted is your light/dark preference, stored in `localStorage` on your own
+device. `exampleSite/content/privacy.md` is a starting point for your own
+policy page.
+
+---
+
+## Development
 
 ```bash
 cd exampleSite
-hugo
+hugo server --buildDrafts --buildFuture
 ```
 
-Output:
+Layout reference:
+
 ```
-Pages            │ 41
-Static files     │ 13
-Total in 48 ms
+layouts/
+├── baseof.html          # document shell
+├── home.html            # single-page home: hero, projects, blogs, about, contact
+├── page.html            # standalone pages
+├── single.html          # default single view
+├── list.html            # section listings
+├── taxonomy.html        # taxonomy term list
+├── term.html            # a single taxonomy term
+├── 404.html
+├── alias.html
+├── _partials/           # head, header, footer, toc, post, page, home-*
+└── _shortcodes/         # skills, development
+```
+
+Assets:
+
+```
+assets/
+├── css/                 # main, dark, navbar, skills, normalize
+└── js/                  # main.js, feather-icons, svg-injector
+
+static/
+├── js/hero-scene.js     # default hero scene
+├── sw.js                # offline service worker
+└── images/              # avatar, favicon, apple touch icon
 ```
 
 ---
 
-## § License
+## Troubleshooting
 
-This theme is licensed under the [MIT License](LICENSE).
+**`hugo` reports the theme cannot be found (exampleSite).** The checkout
+directory is not named `pfp-template`, so `themesDir = "../.."` does not
+resolve. Rename it, or run `hugo server --themesDir /path/to/directory`.
+
+**The hero canvas is blank.** The scene skips itself on viewports under 900px,
+when data saver is on, when `prefers-reduced-motion` is set, and when WebGL is
+unavailable. On desktop with WebGL enabled it should render; check the browser
+console for errors.
+
+**Styles I added in `assets/css` are not loading.** `cssFiles` resolves paths
+relative to `assets/`, so the entry is `css/filename.css`, not
+`filename.css`. A missing file is skipped silently.
+
+**Avatar or favicon not showing.** Paths are resolved from `static/`, so a
+leading slash (`/images/avatar.png`) is required.
 
 ---
-## Theme Submission Checklist
 
-This theme meets Hugo Themes Showcase requirements:
+## Submitting to the Hugo Themes Showcase
 
-- **Hugo v0.146.0+**: Declared in theme.toml (`min_version = "0.146.0"`) and CI uses `hugo_extended_0.146.0_Linux-64bit.tar.gz`.
-- **Responsive & Accessible**: Mobile-first layout, semantic HTML, keyboard-accessible navigation, reduced-motion respected.
-- **Performance**: No Node/npm build pipeline. CSS/JS minified via Hugo Pipes. Procedural 3D loads only on home, bails out on small/data-saver devices.
-- **No non-procedural 3D assets**: Hero is fully procedural.
-- **Example Site Builds Clean**: `cd exampleSite && hugo` produces no errors/warnings on 0.146.0+.
-- **Single Theme**: Self-contained (no external CSS/JS required beyond CDN for Three.js if used).
-- **Demo URL**: GitHub Pages at [https://shivjeet1.github.io/pfp-template/](https://shivjeet1.github.io/pfp-template/).
-- **License**: MIT (see LICENSE).
+To be listed on [themes.gohugo.io](https://themes.gohugo.io/), open a pull
+request against [gohugoio/hugoThemesSiteBuilder](https://github.com/gohugoio/hugoThemesSiteBuilder)
+adding your theme to `themes.txt` in alphabetical order:
+
+```
+pfp-template=https://github.com/shivjeet1/pfp-template
+```
+
+The repository already carries what the showcase requires: a `theme.toml` with
+`min_version = "0.146.0"`, an MIT `LICENSE`, this README, a 1500×1000
+screenshot at `images/screenshot.png`, a 900×600 thumbnail at
+`images/tn.png`, and a public demo site.
+
+---
+
+## License
+
+[MIT](LICENSE) © Shivam Lawale
+
+The example site content is fan work set in the world of *The Eminence in
+Shadow* by Daisuke Aizawa and is not covered by the theme license. Replace it
+with your own content before publishing.
