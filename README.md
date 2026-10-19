@@ -1,4 +1,4 @@
-# Hugo Portfolio Template
+# pfp-template
 
 [![Hugo](https://img.shields.io/badge/Hugo-v0.156.0%2B-ff4088?logo=hugo&logoColor=white)](https://gohugo.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
