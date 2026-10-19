@@ -5,7 +5,7 @@
     - name: Spatial Gates
       glyph: "🚪"
     - name: Reinforcement
-      glyph: "🛡️"
+      glyph: "🛡"
     - name: Regeneration
       glyph: "🩹"
     - name: Confinement
@@ -14,13 +14,13 @@
 - category: "The Sword"
   items:
     - name: Swordsmanship
-      glyph: "⚔️"
+      glyph: "⚔"
     - name: Evasion
       glyph: "💨"
     - name: Ultimate Technique
       glyph: "💥"
     - name: Perception
-      glyph: "👁️"
+      glyph: "👁"
     - name: Bare Hands
       glyph: "✊"
 
@@ -29,9 +29,9 @@
     - name: Command
       glyph: "🌸"
     - name: The Seven Shadows
-      glyph: "⚔️"
+      glyph: "⚔"
     - name: The Cult
-      glyph: "☠️"
+      glyph: "☠"
     - name: The Wisdom
       glyph: "🌍"
     - name: Becoming No One
@@ -40,11 +40,11 @@
 - category: "The Count"
   items:
     - name: Extended Lifespan
-      glyph: "♾️"
+      glyph: "♾"
     - name: Curse Breaking
       glyph: "💜"
     - name: Possession Cure
-      glyph: "⚕️"
+      glyph: "⚕"
     - name: Long Con
       glyph: "🌘"
     - name: Patience
